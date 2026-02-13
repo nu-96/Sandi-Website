@@ -2156,33 +2156,33 @@ body {
     <div class="impact-stats-grid">
       <div class="impact-stat-card reveal">
         <div class="impact-stat-icon"><i class="bi bi-gender-female"></i></div>
-        <div class="impact-stat-number">2x</div>
-        <div class="impact-stat-desc">African American women are incarcerated at twice the rate of white women nationally</div>
+        <div class="impact-stat-number" id="impact-stat1-num">2x</div>
+        <div class="impact-stat-desc" id="impact-stat1-desc">African American women are incarcerated at twice the rate of white women nationally</div>
       </div>
       <div class="impact-stat-card reveal reveal-delay-1">
         <div class="impact-stat-icon"><i class="bi bi-house-fill"></i></div>
-        <div class="impact-stat-number">60%</div>
-        <div class="impact-stat-desc">Of women returning face housing instability within their first year of release</div>
+        <div class="impact-stat-number" id="impact-stat2-num">60%</div>
+        <div class="impact-stat-desc" id="impact-stat2-desc">Of women returning face housing instability within their first year of release</div>
       </div>
       <div class="impact-stat-card reveal reveal-delay-2">
         <div class="impact-stat-icon"><i class="bi bi-award-fill"></i></div>
-        <div class="impact-stat-number">5x</div>
-        <div class="impact-stat-desc">Incarcerated women face higher HIV/AIDS rates than the general population</div>
+        <div class="impact-stat-number" id="impact-stat3-num">5x</div>
+        <div class="impact-stat-desc" id="impact-stat3-desc">Incarcerated women face higher HIV/AIDS rates than the general population</div>
       </div>
       <div class="impact-stat-card reveal reveal-delay-3">
         <div class="impact-stat-icon"><i class="bi bi-graph-up"></i></div>
-        <div class="impact-stat-number">44%</div>
-        <div class="impact-stat-desc">National recidivism rate for women returning to prison within 5 years</div>
+        <div class="impact-stat-number" id="impact-stat4-num">44%</div>
+        <div class="impact-stat-desc" id="impact-stat4-desc">National recidivism rate for women returning to prison within 5 years</div>
       </div>
     </div>
     <div class="impact-highlight reveal">
       <div class="impact-highlight-icon"><i class="bi bi-trophy-fill"></i></div>
       <div>
-        <h3>Our participants? We've only lost <span>2</span> to the system.</h3>
-        <p>While national recidivism rates remain stubbornly high, Inn From the Storm's comprehensive approach — combining legal support, education, health services, and genuine community — is changing outcomes. Our Hand in Hand mentorship model proves that with the right support, women don't go back.</p>
+        <h3>Our participants? We've only lost <span id="impact-success-num">2</span> to the system.</h3>
+        <p id="impact-success-desc">While national recidivism rates remain stubbornly high, Inn From the Storm's comprehensive approach — combining legal support, education, health services, and genuine community — is changing outcomes. Our Hand in Hand mentorship model proves that with the right support, women don't go back.</p>
       </div>
     </div>
-    <p class="data-source">Data sourced from CDC reports, Missouri Department of Corrections, and Bureau of Justice Statistics</p>
+    <p class="data-source" id="impact-data-source">Data sourced from CDC reports, Missouri Department of Corrections, and Bureau of Justice Statistics</p>
   </div>
 </section>
 
@@ -2691,6 +2691,7 @@ body {
         <button class="admin-tab" data-tab="events">Events</button>
         <button class="admin-tab" data-tab="donations">Donations</button>
         <button class="admin-tab" data-tab="contact">Contact</button>
+        <button class="admin-tab" data-tab="statistics">Statistics</button>
         <button class="admin-tab" data-tab="settings">Settings</button>
       </div>
 
@@ -2769,6 +2770,83 @@ body {
         <div class="admin-field">
           <label>Instagram URL</label>
           <input type="url" id="admin-instagram" placeholder="https://instagram.com/...">
+        </div>
+      </div>
+
+
+      <!-- Statistics Tab -->
+      <div class="admin-section" id="tab-statistics">
+        <p style="font-size:0.9rem;color:var(--warm-gray);margin-bottom:16px;">
+          <i class="bi bi-info-circle" style="color:var(--gold);"></i>
+          Edit the impact statistics displayed on the website. Data sourced from CDC, Missouri DOC, and Bureau of Justice Statistics.
+        </p>
+        
+        <h4 style="font-family:var(--font-display);color:var(--wine-deep);margin-bottom:16px;margin-top:24px;">
+          <i class="bi bi-bar-chart-fill" style="color:var(--gold);"></i> Impact Statistics
+        </h4>
+        
+        <div class="admin-stats-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="admin-field">
+            <label>Stat 1 - Number</label>
+            <input type="text" id="admin-stat1-num" placeholder="2x">
+          </div>
+          <div class="admin-field">
+            <label>Stat 1 - Description</label>
+            <input type="text" id="admin-stat1-desc" placeholder="African American women incarcerated at twice the rate">
+          </div>
+          <div class="admin-field">
+            <label>Stat 2 - Number</label>
+            <input type="text" id="admin-stat2-num" placeholder="60%">
+          </div>
+          <div class="admin-field">
+            <label>Stat 2 - Description</label>
+            <input type="text" id="admin-stat2-desc" placeholder="Face housing instability within first year">
+          </div>
+          <div class="admin-field">
+            <label>Stat 3 - Number</label>
+            <input type="text" id="admin-stat3-num" placeholder="5x">
+          </div>
+          <div class="admin-field">
+            <label>Stat 3 - Description</label>
+            <input type="text" id="admin-stat3-desc" placeholder="HIV/AIDS rates compared to general population">
+          </div>
+          <div class="admin-field">
+            <label>Stat 4 - Number</label>
+            <input type="text" id="admin-stat4-num" placeholder="44%">
+          </div>
+          <div class="admin-field">
+            <label>Stat 4 - Description</label>
+            <input type="text" id="admin-stat4-desc" placeholder="National recidivism rate within 5 years">
+          </div>
+        </div>
+
+        <h4 style="font-family:var(--font-display);color:var(--wine-deep);margin-bottom:16px;margin-top:32px;">
+          <i class="bi bi-trophy-fill" style="color:var(--gold);"></i> Success Highlight
+        </h4>
+        
+        <div class="admin-field">
+          <label>Success Number (e.g., "2" for "only lost 2")</label>
+          <input type="text" id="admin-success-num" placeholder="2">
+        </div>
+        <div class="admin-field">
+          <label>Success Description</label>
+          <textarea id="admin-success-desc" placeholder="While national recidivism rates remain stubbornly high..."></textarea>
+        </div>
+
+        <h4 style="font-family:var(--font-display);color:var(--wine-deep);margin-bottom:16px;margin-top:32px;">
+          <i class="bi bi-database-fill" style="color:var(--gold);"></i> Data Sources
+        </h4>
+        
+        <div class="admin-field">
+          <label>Data Source Attribution</label>
+          <input type="text" id="admin-data-source" placeholder="Data sourced from CDC reports, Missouri Department of Corrections, and Bureau of Justice Statistics">
+        </div>
+
+        <div style="background:var(--cream);border-radius:12px;padding:16px;margin-top:24px;">
+          <p style="font-size:0.85rem;color:var(--warm-gray);margin:0;">
+            <i class="bi bi-lightbulb-fill" style="color:var(--gold);"></i>
+            <strong>Tip:</strong> The automation script in the <code>/automation</code> folder can fetch updated statistics from CDC, Missouri DOC, and BJS. Run <code>npm run collect</code> to update.
+          </p>
         </div>
       </div>
 
@@ -3052,6 +3130,51 @@ body {
     if (data.cashapp && handles[0]) handles[0].textContent = data.cashapp;
     if (data.paypal && handles[1]) handles[1].textContent = data.paypal;
     if (data.venmo && handles[2]) handles[2].textContent = data.venmo;
+// Statistics
+    if (data.stat1Num) {
+      const el = document.getElementById('impact-stat1-num');
+      if (el) el.textContent = data.stat1Num;
+    }
+    if (data.stat1Desc) {
+      const el = document.getElementById('impact-stat1-desc');
+      if (el) el.textContent = data.stat1Desc;
+    }
+    if (data.stat2Num) {
+      const el = document.getElementById('impact-stat2-num');
+      if (el) el.textContent = data.stat2Num;
+    }
+    if (data.stat2Desc) {
+      const el = document.getElementById('impact-stat2-desc');
+      if (el) el.textContent = data.stat2Desc;
+    }
+    if (data.stat3Num) {
+      const el = document.getElementById('impact-stat3-num');
+      if (el) el.textContent = data.stat3Num;
+    }
+    if (data.stat3Desc) {
+      const el = document.getElementById('impact-stat3-desc');
+      if (el) el.textContent = data.stat3Desc;
+    }
+    if (data.stat4Num) {
+      const el = document.getElementById('impact-stat4-num');
+      if (el) el.textContent = data.stat4Num;
+    }
+    if (data.stat4Desc) {
+      const el = document.getElementById('impact-stat4-desc');
+      if (el) el.textContent = data.stat4Desc;
+    }
+    if (data.successNum) {
+      const el = document.getElementById('impact-success-num');
+      if (el) el.textContent = data.successNum;
+    }
+    if (data.successDesc) {
+      const el = document.getElementById('impact-success-desc');
+      if (el) el.textContent = data.successDesc;
+    }
+    if (data.dataSource) {
+      const el = document.getElementById('impact-data-source');
+      if (el) el.textContent = data.dataSource;
+    }
     // Social links
     const socialLinks = document.querySelectorAll('.social-link');
     if (data.facebook) socialLinks.forEach(a => { if (a.title === 'Facebook') a.href = data.facebook; });
@@ -3118,6 +3241,19 @@ body {
     document.getElementById('admin-facebook').value = data.facebook || '';
     document.getElementById('admin-instagram').value = data.instagram || '';
     renderBoardAdmin(data.boardMembers || [{name:'Board Member 1',role:'Director'},{name:'Board Member 2',role:'Director'},{name:'Board Member 3',role:'Director'},{name:'Board Member 4',role:'Director'},{name:'Board Member 5',role:'Director'}]);
+    // Statistics
+    document.getElementById('admin-stat1-num').value = data.stat1Num || '2x';
+    document.getElementById('admin-stat1-desc').value = data.stat1Desc || 'African American women are incarcerated at twice the rate of white women nationally';
+    document.getElementById('admin-stat2-num').value = data.stat2Num || '60%';
+    document.getElementById('admin-stat2-desc').value = data.stat2Desc || 'Of women returning face housing instability within their first year of release';
+    document.getElementById('admin-stat3-num').value = data.stat3Num || '5x';
+    document.getElementById('admin-stat3-desc').value = data.stat3Desc || 'Incarcerated women face higher HIV/AIDS rates than the general population';
+    document.getElementById('admin-stat4-num').value = data.stat4Num || '44%';
+    document.getElementById('admin-stat4-desc').value = data.stat4Desc || 'National recidivism rate for women returning to prison within 5 years';
+    document.getElementById('admin-success-num').value = data.successNum || '2';
+    document.getElementById('admin-success-desc').value = data.successDesc || "While national recidivism rates remain stubbornly high, Inn From the Storm's comprehensive approach — combining legal support, education, health services, and genuine community — is changing outcomes. Our Hand in Hand mentorship model proves that with the right support, women don't go back.";
+    document.getElementById('admin-data-source').value = data.dataSource || 'Data sourced from CDC reports, Missouri Department of Corrections, and Bureau of Justice Statistics';
+
   }
 
   function renderBoardAdmin(members) {
@@ -3176,7 +3312,19 @@ body {
       location: document.getElementById('admin-location').value.trim(),
       facebook: document.getElementById('admin-facebook').value.trim(),
       instagram: document.getElementById('admin-instagram').value.trim(),
-      boardMembers: members
+      boardMembers: members,
+
+      stat1Num: document.getElementById('admin-stat1-num').value.trim(),
+      stat1Desc: document.getElementById('admin-stat1-desc').value.trim(),
+      stat2Num: document.getElementById('admin-stat2-num').value.trim(),
+      stat2Desc: document.getElementById('admin-stat2-desc').value.trim(),
+      stat3Num: document.getElementById('admin-stat3-num').value.trim(),
+      stat3Desc: document.getElementById('admin-stat3-desc').value.trim(),
+      stat4Num: document.getElementById('admin-stat4-num').value.trim(),
+      stat4Desc: document.getElementById('admin-stat4-desc').value.trim(),
+      successNum: document.getElementById('admin-success-num').value.trim(),
+      successDesc: document.getElementById('admin-success-desc').value.trim(),
+      dataSource: document.getElementById('admin-data-source').value.trim()
     };
     saveData(data);
     applySiteData();
@@ -3251,3 +3399,4 @@ body {
 
 </body>
 </html>
+
