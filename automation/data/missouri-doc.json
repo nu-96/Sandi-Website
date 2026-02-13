@@ -1,0 +1,90 @@
+{
+  "source": "Missouri Department of Corrections",
+  "lastUpdated": "2026-02-13T20:07:58.796Z",
+  "category": "Missouri Incarceration Statistics",
+  "statistics": [
+    {
+      "metric": "Total Missouri Prison Population",
+      "value": "~23,000",
+      "description": "Total individuals incarcerated in Missouri state prisons",
+      "year": 2024,
+      "source": "Missouri DOC"
+    },
+    {
+      "metric": "Female Prison Population in Missouri",
+      "value": "~2,300",
+      "percentage": "~10% of total",
+      "description": "Women incarcerated in Missouri state facilities",
+      "year": 2024,
+      "source": "Missouri DOC"
+    },
+    {
+      "metric": "African American Incarceration Rate (Missouri)",
+      "value": "5x higher",
+      "description": "African Americans are incarcerated at 5 times the rate of whites in Missouri",
+      "source": "Prison Policy Initiative / Missouri DOC"
+    },
+    {
+      "metric": "Women Released Annually (Missouri)",
+      "value": "~3,000",
+      "description": "Estimated number of women released from Missouri prisons annually",
+      "source": "Missouri DOC Annual Reports"
+    },
+    {
+      "metric": "Primary Women's Facility",
+      "value": "Chillicothe Correctional Center",
+      "location": "Chillicothe, MO",
+      "description": "Primary facility housing female offenders in Missouri",
+      "source": "Missouri DOC"
+    }
+  ],
+  "reentryStatistics": {
+    "description": "Challenges facing women returning from incarceration in Missouri",
+    "challenges": [
+      {
+        "category": "Housing",
+        "statistic": "60%+",
+        "description": "Women face housing instability within first year of release"
+      },
+      {
+        "category": "Employment",
+        "statistic": "27%",
+        "description": "Unemployment rate for formerly incarcerated individuals (vs 4% general)"
+      },
+      {
+        "category": "Healthcare Access",
+        "statistic": "70%",
+        "description": "Formerly incarcerated women report difficulty accessing healthcare"
+      },
+      {
+        "category": "Mental Health",
+        "statistic": "75%",
+        "description": "Incarcerated women report history of mental health issues"
+      },
+      {
+        "category": "Substance Abuse",
+        "statistic": "60%",
+        "description": "Women in prison report substance abuse history"
+      },
+      {
+        "category": "Trauma History",
+        "statistic": "86%",
+        "description": "Incarcerated women report history of physical or sexual abuse"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "name": "Missouri DOC",
+      "url": "https://doc.mo.gov/"
+    },
+    {
+      "name": "Missouri DOC Data & Statistics",
+      "url": "https://doc.mo.gov/media-center/newsroom/data-and-statistics"
+    },
+    {
+      "name": "Missouri Reentry Process",
+      "url": "https://doc.mo.gov/divisions/probation-parole/reentry"
+    }
+  ]
+}

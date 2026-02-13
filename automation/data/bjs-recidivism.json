@@ -1,0 +1,101 @@
+{
+  "source": "Bureau of Justice Statistics (BJS)",
+  "lastUpdated": "2026-02-13T20:07:59.942Z",
+  "category": "Recidivism and Reentry Statistics",
+  "statistics": [
+    {
+      "metric": "National Recidivism Rate (5 years)",
+      "value": "44%",
+      "description": "Percentage of released prisoners who return to prison within 5 years",
+      "year": 2021,
+      "source": "BJS Recidivism of Prisoners Released Study"
+    },
+    {
+      "metric": "Women's Recidivism Rate",
+      "value": "~40%",
+      "description": "Women have slightly lower recidivism rates than men",
+      "comparison": "Men: ~46%",
+      "source": "BJS"
+    },
+    {
+      "metric": "3-Year Rearrest Rate",
+      "value": "68%",
+      "description": "Percentage of released prisoners rearrested within 3 years",
+      "source": "BJS"
+    },
+    {
+      "metric": "First Year Recidivism",
+      "value": "29%",
+      "description": "Nearly one-third return within the first year - the critical period",
+      "source": "BJS"
+    }
+  ],
+  "africanAmericanWomenStatistics": {
+    "description": "Statistics specific to African American women and incarceration",
+    "statistics": [
+      {
+        "metric": "Incarceration Rate Disparity",
+        "value": "2x",
+        "description": "African American women are incarcerated at twice the rate of white women",
+        "source": "The Sentencing Project"
+      },
+      {
+        "metric": "Lifetime Likelihood of Imprisonment",
+        "value": "1 in 18",
+        "description": "Lifetime likelihood of imprisonment for Black women (vs 1 in 111 for white women)",
+        "source": "BJS"
+      },
+      {
+        "metric": "Percentage of Female Prison Population",
+        "value": "~22%",
+        "description": "African American women as percentage of total female prison population",
+        "comparison": "~13% of US female population",
+        "source": "BJS / Census"
+      }
+    ]
+  },
+  "whatWorks": {
+    "description": "Evidence-based practices that reduce recidivism",
+    "interventions": [
+      {
+        "intervention": "Education Programs",
+        "reduction": "43% lower recidivism"
+      },
+      {
+        "intervention": "Vocational Training",
+        "reduction": "28% lower recidivism"
+      },
+      {
+        "intervention": "Cognitive Behavioral Therapy",
+        "reduction": "25% lower recidivism"
+      },
+      {
+        "intervention": "Mentorship Programs",
+        "reduction": "20-30% lower recidivism"
+      },
+      {
+        "intervention": "Transitional Housing",
+        "reduction": "Significant reduction in first-year returns"
+      },
+      {
+        "intervention": "Employment Assistance",
+        "reduction": "Critical for long-term success"
+      }
+    ],
+    "source": "RAND Corporation / National Institute of Justice"
+  },
+  "resources": [
+    {
+      "name": "Bureau of Justice Statistics",
+      "url": "https://bjs.ojp.gov/"
+    },
+    {
+      "name": "BJS Recidivism Studies",
+      "url": "https://bjs.ojp.gov/topics/recidivism"
+    },
+    {
+      "name": "The Sentencing Project",
+      "url": "https://www.sentencingproject.org/"
+    }
+  ]
+}

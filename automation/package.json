@@ -1,0 +1,21 @@
+{
+  "name": "ifts-data-automation",
+  "version": "1.0.0",
+  "description": "Automated data collection for Inn From the Storm - CDC and Missouri DOC statistics",
+  "main": "collect-data.js",
+  "scripts": {
+    "collect": "node collect-data.js",
+    "collect:all": "node collect-data.js --all",
+    "collect:cdc": "node collect-data.js --cdc",
+    "collect:missouri": "node collect-data.js --missouri",
+    "collect:bjs": "node collect-data.js --bjs"
+  },
+  "keywords": ["cdc", "missouri", "incarceration", "data", "automation"],
+  "author": "Luniero",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1"
+  }
+}

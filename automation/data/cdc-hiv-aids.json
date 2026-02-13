@@ -1,0 +1,51 @@
+{
+  "source": "CDC - Centers for Disease Control and Prevention",
+  "lastUpdated": "2026-02-13T20:07:58.309Z",
+  "category": "HIV/AIDS in Correctional Settings",
+  "statistics": [
+    {
+      "metric": "HIV Prevalence in State Prisons",
+      "value": "1.3%",
+      "comparison": "0.4% in general US population",
+      "multiplier": "3.25x higher",
+      "year": 2019,
+      "source": "CDC HIV Surveillance Report"
+    },
+    {
+      "metric": "Women with HIV in Prison",
+      "value": "1.9%",
+      "description": "Female inmates have higher HIV rates than male inmates (1.3%)",
+      "year": 2019,
+      "source": "Bureau of Justice Statistics / CDC"
+    },
+    {
+      "metric": "AIDS-Related Deaths in Prison",
+      "value": "Declining",
+      "description": "Deaths have declined significantly with antiretroviral treatment availability",
+      "source": "CDC"
+    },
+    {
+      "metric": "Hepatitis C in Prisons",
+      "value": "17-25%",
+      "description": "Hepatitis C rates are significantly elevated in correctional populations",
+      "source": "CDC Viral Hepatitis"
+    }
+  ],
+  "keyFindings": [
+    "Incarcerated populations face disproportionately high rates of HIV/AIDS",
+    "Women in prison have higher HIV rates than incarcerated men",
+    "African American women are disproportionately affected",
+    "Lack of consistent healthcare post-release contributes to poor outcomes",
+    "HIV testing and treatment in prisons has improved but gaps remain"
+  ],
+  "resources": [
+    {
+      "name": "CDC HIV and Corrections",
+      "url": "https://www.cdc.gov/hiv/group/correctional.html"
+    },
+    {
+      "name": "CDC HIV Statistics",
+      "url": "https://www.cdc.gov/hiv/statistics/overview/index.html"
+    }
+  ]
+}

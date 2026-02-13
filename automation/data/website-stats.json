@@ -1,0 +1,35 @@
+{
+  "lastUpdated": "2026-02-13T20:07:59.944Z",
+  "stats": [
+    {
+      "key": "incarceration_disparity",
+      "value": "2x",
+      "label": "African American women incarcerated at 2x the rate"
+    },
+    {
+      "key": "housing_instability",
+      "value": "60%",
+      "label": "Face housing instability in first year"
+    },
+    {
+      "key": "hiv_rate",
+      "value": "5x",
+      "label": "HIV rate compared to general population"
+    },
+    {
+      "key": "recidivism_national",
+      "value": "44%",
+      "label": "National 5-year recidivism rate"
+    },
+    {
+      "key": "education_impact",
+      "value": "43%",
+      "label": "Recidivism reduction with education"
+    },
+    {
+      "key": "trauma_history",
+      "value": "86%",
+      "label": "Incarcerated women with trauma history"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "title": "Inn From the Storm - Impact Data Summary",
+  "generatedAt": "2026-02-13T20:07:59.943Z",
+  "purpose": "Data supporting the mission of helping formerly incarcerated African American women in Missouri",
+  "keyStatistics": [
+    {
+      "label": "African American Women Incarceration Rate",
+      "value": "2x higher than white women",
+      "source": "The Sentencing Project"
+    },
+    {
+      "label": "Housing Instability After Release",
+      "value": "60%+",
+      "description": "Face housing instability within first year",
+      "source": "Multiple studies"
+    },
+    {
+      "label": "HIV Rate in Incarcerated Women",
+      "value": "5x higher than general population",
+      "source": "CDC"
+    },
+    {
+      "label": "National Recidivism Rate",
+      "value": "44%",
+      "description": "Return to prison within 5 years",
+      "source": "Bureau of Justice Statistics"
+    },
+    {
+      "label": "IFTS Success Rate",
+      "value": "Only 2 lost to the system",
+      "description": "Compared to 44% national recidivism rate",
+      "source": "Inn From the Storm"
+    }
+  ],
+  "impactAreas": {
+    "legal": {
+      "need": "Many returning women face ongoing legal challenges",
+      "stats": [
+        "63% have pending legal issues at release",
+        "Court navigation is a major barrier"
+      ]
+    },
+    "education": {
+      "need": "Education dramatically reduces recidivism",
+      "stats": [
+        "43% reduction in recidivism with education programs",
+        "GED completion opens employment doors"
+      ]
+    },
+    "health": {
+      "need": "HIV/AIDS and healthcare access",
+      "stats": [
+        "Women in prison have 5x higher HIV rates",
+        "70% report difficulty accessing healthcare post-release"
+      ]
+    },
+    "housing": {
+      "need": "Stable housing is foundational",
+      "stats": [
+        "60%+ face housing instability in first year",
+        "Housing is the #1 barrier to successful reentry"
+      ]
+    },
+    "employment": {
+      "need": "Employment prevents recidivism",
+      "stats": [
+        "27% unemployment rate for formerly incarcerated",
+        "Background check barriers affect 70%+"
+      ]
+    },
+    "mentorship": {
+      "need": "Peer support works",
+      "stats": [
+        "20-30% reduction in recidivism with mentorship",
+        "Hand in Hand model proves effective"
+      ]
+    }
+  },
+  "missouriSpecific": {
+    "totalIncarcerated": "~23,000",
+    "femalePopulation": "~2,300",
+    "releasedAnnually": "~3,000 women",
+    "primaryFacility": "Chillicothe Correctional Center",
+    "racialDisparity": "5x higher incarceration rate for African Americans"
+  },
+  "dataSources": [
+    "CDC - Centers for Disease Control and Prevention",
+    "Missouri Department of Corrections",
+    "Bureau of Justice Statistics",
+    "The Sentencing Project",
+    "Prison Policy Initiative",
+    "RAND Corporation"
+  ]
+}
