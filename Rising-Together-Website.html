@@ -435,7 +435,7 @@ body {
   top: 0;
   right: 0;
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(200,152,60,0.3), rgba(107,45,62,0.2));
+  background: url('images/ifts-booth.jpg') center/cover no-repeat;
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0,0,0,0.3);
 }
@@ -444,9 +444,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(180deg, transparent 50%, rgba(74,30,43,0.6) 100%),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><defs><linearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23C8983C;stop-opacity:0.3"/><stop offset="100%25" style="stop-color:%236B2D3E;stop-opacity:0.4"/></linearGradient></defs><rect fill="url(%23g)" width="400" height="500"/><circle cx="200" cy="180" r="80" fill="rgba(255,255,255,0.08)"/><circle cx="200" cy="180" r="60" fill="rgba(255,255,255,0.06)"/><path d="M140,260 Q170,230 200,260 Q230,230 260,260 L260,400 Q200,380 140,400Z" fill="rgba(255,255,255,0.05)"/></svg>');
+  background: linear-gradient(180deg, transparent 40%, rgba(74,30,43,0.6) 100%);
   background-size: cover;
 }
 
@@ -619,7 +617,7 @@ body {
   aspect-ratio: 4/5;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(145deg, var(--cream-dark), var(--cream));
+  background: url('images/golf-foursome.jpg') center/cover no-repeat;
   position: relative;
   box-shadow: 0 30px 60px rgba(107,45,62,0.08);
 }
@@ -628,9 +626,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(180deg, transparent 60%, rgba(74,30,43,0.3) 100%),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect fill="%23F0E4D0" width="400" height="500"/><circle cx="100" cy="150" r="120" fill="%23E8C876" opacity="0.15"/><circle cx="300" cy="350" r="150" fill="%236B2D3E" opacity="0.08"/><circle cx="200" cy="250" r="80" fill="%23C8983C" opacity="0.1"/></svg>');
+  background: linear-gradient(180deg, transparent 50%, rgba(74,30,43,0.35) 100%);
   background-size: cover;
 }
 
@@ -948,9 +944,9 @@ body {
   inset: 0;
 }
 
-.story-1 .story-visual { background: linear-gradient(135deg, var(--wine) 0%, #8B3D52 100%); }
-.story-2 .story-visual { background: linear-gradient(135deg, var(--gold) 0%, #A87D30 100%); }
-.story-3 .story-visual { background: linear-gradient(135deg, var(--sage) 0%, #4A5E3E 100%); }
+.story-1 .story-visual { background: linear-gradient(135deg, rgba(107,45,62,0.4), rgba(139,61,82,0.4)), url('images/golf-trio.jpg') center/cover no-repeat; }
+.story-2 .story-visual { background: linear-gradient(135deg, rgba(200,152,60,0.4), rgba(168,125,48,0.4)), url('images/trophy-winner.jpg') center/cover no-repeat; }
+.story-3 .story-visual { background: linear-gradient(135deg, rgba(107,127,94,0.4), rgba(74,94,62,0.4)), url('images/golf-swing.jpg') center/cover no-repeat; }
 
 .story-visual-icon {
   position: absolute;
