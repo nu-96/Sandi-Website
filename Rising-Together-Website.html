@@ -2316,7 +2316,7 @@ body {
       <h2 class="section-title">Upcoming Events</h2>
       <p class="section-subtitle">Community events, workshops, fundraisers, and more. We're always creating spaces for connection and growth.</p>
     </div>
-    <div class="events-grid">
+    <div class="events-grid" id="eventsGrid">
       <div class="event-card reveal">
         <div class="event-date-bar">
           <span class="event-date-num">15</span>
@@ -3107,20 +3107,28 @@ body {
       phoneEl.textContent = data.phone;
     }
     if (data.location) {
-      const el = document.querySelector('.contact-channel:last-child .contact-channel-text');
+      const locChannels = document.querySelectorAll('.contact-channel');
+      if (locChannels[2]) {
+        const el = locChannels[2].querySelector('.contact-channel-text');
+        if (el) el.textContent = data.location;
+      }
     }
     // Board members
-    if (data.boardMembers && data.boardMembers.length > 0) {
+    if (data.boardMembers !== undefined) {
       const carousel = document.getElementById('boardCarousel');
       if (carousel) {
         carousel.innerHTML = '';
-        data.boardMembers.forEach(m => {
-          const card = document.createElement('div');
-          card.className = 'board-card';
-          const initials = (m.name || 'M').split(' ').map(w => w[0]).join('').toUpperCase();
-          card.innerHTML = '<div class="board-avatar">' + initials + '</div><h4>' + escapeHtml(m.name || 'Board Member') + '</h4><p>' + escapeHtml(m.role || 'Director') + '</p>';
-          carousel.appendChild(card);
-        });
+        if (data.boardMembers.length === 0) {
+          carousel.innerHTML = '<p style="color:var(--warm-gray);padding:40px 20px;text-align:center;width:100%;">No board members added yet.</p>';
+        } else {
+          data.boardMembers.forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'board-card';
+            const initials = (m.name || 'M').split(' ').map(w => w[0]).join('').toUpperCase();
+            card.innerHTML = '<div class="board-avatar">' + initials + '</div><h4>' + escapeHtml(m.name || 'Board Member') + '</h4><p>' + escapeHtml(m.role || 'Director') + '</p>';
+            carousel.appendChild(card);
+          });
+        }
         currentSlide = 0;
         updateCarousel();
       }
@@ -3130,7 +3138,41 @@ body {
     if (data.cashapp && handles[0]) handles[0].textContent = data.cashapp;
     if (data.paypal && handles[1]) handles[1].textContent = data.paypal;
     if (data.venmo && handles[2]) handles[2].textContent = data.venmo;
-// Statistics
+    // Events
+    if (data.events !== undefined) {
+      const evGrid = document.getElementById('eventsGrid');
+      if (evGrid) {
+        evGrid.innerHTML = '';
+        if (data.events.length === 0) {
+          evGrid.innerHTML = '<p class="text-center" style="grid-column:1/-1;color:var(--warm-gray);padding:40px 0;">No upcoming events. Check back soon!</p>';
+        } else {
+          const barColors = ['var(--wine)', 'var(--gold)', 'var(--sage)'];
+          data.events.forEach((ev, idx) => {
+            const card = document.createElement('div');
+            card.className = 'event-card reveal visible';
+            card.innerHTML =
+              '<div class="event-date-bar" style="background:' + barColors[idx % 3] + ';">' +
+                '<span class="event-date-num">' + escapeHtml(ev.day || '') + '</span>' +
+                '<div class="event-date-info">' +
+                  '<span class="event-date-month">' + escapeHtml(ev.month || '') + '</span>' +
+                  '<span>' + escapeHtml(ev.weekday || '') + '</span>' +
+                '</div>' +
+              '</div>' +
+              '<div class="event-body">' +
+                '<h3>' + escapeHtml(ev.title || '') + '</h3>' +
+                '<p>' + escapeHtml(ev.description || '') + '</p>' +
+                '<div class="event-details">' +
+                  '<span class="event-detail"><i class="bi bi-clock"></i> ' + escapeHtml(ev.time || '') + '</span>' +
+                  '<span class="event-detail"><i class="bi bi-geo-alt-fill"></i> ' + escapeHtml(ev.location || '') + '</span>' +
+                  '<span class="event-detail"><i class="bi bi-ticket-perforated"></i> ' + escapeHtml(ev.tickets || '') + '</span>' +
+                '</div>' +
+              '</div>';
+            evGrid.appendChild(card);
+          });
+        }
+      }
+    }
+    // Statistics
     if (data.stat1Num) {
       const el = document.getElementById('impact-stat1-num');
       if (el) el.textContent = data.stat1Num;
@@ -3241,6 +3283,11 @@ body {
     document.getElementById('admin-facebook').value = data.facebook || '';
     document.getElementById('admin-instagram').value = data.instagram || '';
     renderBoardAdmin(data.boardMembers || [{name:'Board Member 1',role:'Director'},{name:'Board Member 2',role:'Director'},{name:'Board Member 3',role:'Director'},{name:'Board Member 4',role:'Director'},{name:'Board Member 5',role:'Director'}]);
+    renderEventsAdmin(data.events || [
+      {day:'15',month:'March 2026',weekday:'Saturday',title:'Annual Homecoming Celebration',description:'Join us to celebrate our program graduates and honor the women who\'ve transformed their lives. Food, music, and community.',time:'11:00 AM - 4:00 PM',location:'Community Center, St. Louis MO',tickets:'Free & Open to All'},
+      {day:'05',month:'April 2026',weekday:'Sunday',title:'Know Your Rights Workshop',description:'A free legal workshop for returning citizens. Learn about expungement, housing rights, and navigating the court system.',time:'1:00 PM - 3:00 PM',location:'Inn From the Storm Office',tickets:'RSVP Required'},
+      {day:'20',month:'April 2026',weekday:'Monday',title:'Fundraiser Gala Dinner',description:'An evening of hope and generosity. Hear directly from our women, enjoy dinner, and help us raise funds for expanded services.',time:'6:00 PM - 9:00 PM',location:'Venue TBA',tickets:'Tickets Available Soon'}
+    ]);
     // Statistics
     document.getElementById('admin-stat1-num').value = data.stat1Num || '2x';
     document.getElementById('admin-stat1-desc').value = data.stat1Desc || 'African American women are incarcerated at twice the rate of white women nationally';
@@ -3288,6 +3335,57 @@ body {
     div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
   });
 
+  // ===== EVENTS ADMIN =====
+  function renderEventsAdmin(events) {
+    const list = document.getElementById('adminEventList');
+    if (!list) return;
+    list.innerHTML = '';
+    events.forEach((ev, i) => {
+      const div = document.createElement('div');
+      div.className = 'admin-event-item';
+      div.innerHTML =
+        '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
+          '<div class="admin-field"><label>Day</label><input type="text" class="ev-day" value="' + escapeHtml(ev.day || '') + '" placeholder="15"></div>' +
+          '<div class="admin-field"><label>Month/Year</label><input type="text" class="ev-month" value="' + escapeHtml(ev.month || '') + '" placeholder="March 2026"></div>' +
+          '<div class="admin-field"><label>Weekday</label><input type="text" class="ev-weekday" value="' + escapeHtml(ev.weekday || '') + '" placeholder="Saturday"></div>' +
+        '</div>' +
+        '<div class="admin-field"><label>Event Title</label><input type="text" class="ev-title" value="' + escapeHtml(ev.title || '') + '" placeholder="Event Name"></div>' +
+        '<div class="admin-field"><label>Description</label><textarea class="ev-desc" placeholder="Event description...">' + escapeHtml(ev.description || '') + '</textarea></div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
+          '<div class="admin-field"><label>Time</label><input type="text" class="ev-time" value="' + escapeHtml(ev.time || '') + '" placeholder="11:00 AM - 4:00 PM"></div>' +
+          '<div class="admin-field"><label>Location</label><input type="text" class="ev-location" value="' + escapeHtml(ev.location || '') + '" placeholder="Venue Name"></div>' +
+          '<div class="admin-field"><label>Tickets/Entry</label><input type="text" class="ev-tickets" value="' + escapeHtml(ev.tickets || '') + '" placeholder="Free & Open to All"></div>' +
+        '</div>';
+      list.appendChild(div);
+      div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+    });
+  }
+
+  // Add event
+  const addEventBtn = document.getElementById('addEvent');
+  if (addEventBtn) addEventBtn.addEventListener('click', () => {
+    const list = document.getElementById('adminEventList');
+    const div = document.createElement('div');
+    div.className = 'admin-event-item';
+    div.innerHTML =
+      '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
+        '<div class="admin-field"><label>Day</label><input type="text" class="ev-day" value="" placeholder="15"></div>' +
+        '<div class="admin-field"><label>Month/Year</label><input type="text" class="ev-month" value="" placeholder="March 2026"></div>' +
+        '<div class="admin-field"><label>Weekday</label><input type="text" class="ev-weekday" value="" placeholder="Saturday"></div>' +
+      '</div>' +
+      '<div class="admin-field"><label>Event Title</label><input type="text" class="ev-title" value="" placeholder="Event Name"></div>' +
+      '<div class="admin-field"><label>Description</label><textarea class="ev-desc" placeholder="Event description..."></textarea></div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
+        '<div class="admin-field"><label>Time</label><input type="text" class="ev-time" value="" placeholder="11:00 AM - 4:00 PM"></div>' +
+        '<div class="admin-field"><label>Location</label><input type="text" class="ev-location" value="" placeholder="Venue Name"></div>' +
+        '<div class="admin-field"><label>Tickets/Entry</label><input type="text" class="ev-tickets" value="" placeholder="Free & Open to All"></div>' +
+      '</div>';
+    list.appendChild(div);
+    div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+  });
+
   // Save
   const saveBtn = document.getElementById('saveAdmin');
   if (saveBtn) saveBtn.addEventListener('click', () => {
@@ -3296,6 +3394,25 @@ body {
     const members = [];
     boardNames.forEach((inp, i) => {
       if (inp.value.trim()) members.push({ name: inp.value.trim(), role: boardRoles[i] ? boardRoles[i].value.trim() : 'Director' });
+    });
+
+    // Collect events
+    const eventItems = document.querySelectorAll('#adminEventList .admin-event-item');
+    const events = [];
+    eventItems.forEach(item => {
+      const title = item.querySelector('.ev-title');
+      if (title && title.value.trim()) {
+        events.push({
+          day: (item.querySelector('.ev-day') || {}).value || '',
+          month: (item.querySelector('.ev-month') || {}).value || '',
+          weekday: (item.querySelector('.ev-weekday') || {}).value || '',
+          title: title.value.trim(),
+          description: (item.querySelector('.ev-desc') || {}).value || '',
+          time: (item.querySelector('.ev-time') || {}).value || '',
+          location: (item.querySelector('.ev-location') || {}).value || '',
+          tickets: (item.querySelector('.ev-tickets') || {}).value || ''
+        });
+      }
     });
 
     const data = {
@@ -3313,6 +3430,7 @@ body {
       facebook: document.getElementById('admin-facebook').value.trim(),
       instagram: document.getElementById('admin-instagram').value.trim(),
       boardMembers: members,
+      events: events,
 
       stat1Num: document.getElementById('admin-stat1-num').value.trim(),
       stat1Desc: document.getElementById('admin-stat1-desc').value.trim(),
