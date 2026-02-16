@@ -14,16 +14,17 @@
    CSS VARIABLES & RESET
    ═══════════════════════════════════════════ */
 :root {
-  --wine: #6B2D3E;
-  --wine-deep: #4A1E2B;
-  --gold: #C8983C;
-  --gold-light: #E8C876;
+  /* Rasta-Inspired Color Scheme - Red, Gold, Green */
+  --wine: #B22222;        /* Rasta Red */
+  --wine-deep: #8B0000;   /* Deep Red */
+  --gold: #DAA520;        /* Rasta Gold */
+  --gold-light: #FFD700;  /* Bright Gold */
   --cream: #FDF6EC;
   --cream-dark: #F0E4D0;
   --charcoal: #2A2A2A;
   --warm-gray: #7A7068;
   --soft-white: #FFFDF9;
-  --sage: #6B7F5E;
+  --sage: #228B22;        /* Rasta Green */
   --coral: #C4705A;
   --font-display: 'DM Serif Display', serif;
   --font-heading: 'Playfair Display', serif;
@@ -2094,6 +2095,29 @@ body {
   </div>
 </div>
 
+<!-- ═══════════ VIDEO FEATURE ═══════════ -->
+<section class="section-pad" style="background: var(--cream);">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Watch Our Story</span>
+      <h2 class="section-title">See the Impact</h2>
+      <p class="section-subtitle">Learn more about Inn From the Storm and the lives we're changing.</p>
+    </div>
+    <div class="reveal" style="max-width: 800px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+      <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+        <iframe 
+          src="https://www.youtube.com/embed/I1_18csbZUE" 
+          title="Inn From the Storm Video"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ ABOUT / MISSION ═══════════ -->
 <section class="about section-pad" id="about">
   <div class="container">
@@ -2384,35 +2408,25 @@ body {
       <p class="section-subtitle">Photos from our events, workshops, celebrations, and the everyday moments that make this community special.</p>
     </div>
     <div class="gallery-grid reveal">
-      <div class="gallery-item">
-        <i class="bi bi-camera-fill gallery-icon"></i>
-        <span class="gallery-label">Annual Celebration 2025</span>
+      <div class="gallery-item" style="background: url('images/golf-trio.jpg') center/cover no-repeat;">
+        <span class="gallery-label">Golf Tournament 2025</span>
       </div>
-      <div class="gallery-item">
-        <i class="bi bi-camera-fill gallery-icon"></i>
-        <span class="gallery-label">GED Graduation</span>
+      <div class="gallery-item" style="background: url('images/trophy-winner.jpg') center/cover no-repeat;">
+        <span class="gallery-label">Longest Putt Winner</span>
       </div>
-      <div class="gallery-item">
-        <i class="bi bi-camera-fill gallery-icon"></i>
-        <span class="gallery-label">Community Workshop</span>
+      <div class="gallery-item" style="background: url('images/golf-foursome.jpg') center/cover no-repeat;">
+        <span class="gallery-label">Tournament Participants</span>
       </div>
-      <div class="gallery-item">
-        <i class="bi bi-camera-fill gallery-icon"></i>
-        <span class="gallery-label">Mentorship Program</span>
+      <div class="gallery-item" style="background: url('images/ifts-booth.jpg') center/cover no-repeat;">
+        <span class="gallery-label">IFTS Community Booth</span>
       </div>
-      <div class="gallery-item">
-        <i class="bi bi-camera-fill gallery-icon"></i>
-        <span class="gallery-label">Fundraiser Night</span>
+      <div class="gallery-item" style="background: url('images/vendor-cigars.jpg') center/cover no-repeat;">
+        <span class="gallery-label">Tournament Vendors</span>
       </div>
-      <div class="gallery-item">
-        <i class="bi bi-camera-fill gallery-icon"></i>
-        <span class="gallery-label">Volunteer Appreciation</span>
+      <div class="gallery-item" style="background: url('images/sponsors-board.jpg') center/cover no-repeat;">
+        <span class="gallery-label">Our Sponsors</span>
       </div>
     </div>
-    <p class="text-center reveal" style="margin-top: 30px; color: var(--warm-gray); font-size: 0.9rem;">
-      <i class="bi bi-info-circle-fill" style="color: var(--gold);"></i>
-      Photo placeholders — replace with your event photos from previous years
-    </p>
   </div>
 </section>
 
@@ -2425,7 +2439,7 @@ body {
       <p class="section-subtitle">Led by those who understand the struggle firsthand and committed to creating lasting change.</p>
     </div>
     <div class="team-featured reveal">
-      <div class="team-featured-avatar">S</div>
+      <div class="team-featured-avatar" style="background: url('images/sandi-founder.jpg') center/cover no-repeat; font-size: 0;"></div>
       <div class="team-featured-info">
         <h3>Sandi</h3>
         <span class="team-featured-role">Founder &amp; Executive Director</span>
@@ -2525,14 +2539,14 @@ body {
             <div class="contact-channel-icon"><i class="bi bi-telephone-fill"></i></div>
             <div>
               <span class="contact-channel-label">Phone</span>
-              <span class="contact-channel-text" id="contactPhone" data-parts="(314) 555-0123"></span>
+              <span class="contact-channel-text" id="contactPhone" data-parts="(314) 328-9INN (9466)"></span>
             </div>
           </div>
           <div class="contact-channel">
             <div class="contact-channel-icon"><i class="bi bi-geo-alt-fill"></i></div>
             <div>
               <span class="contact-channel-label">Location</span>
-              <span class="contact-channel-text">St. Louis, Missouri</span>
+              <span class="contact-channel-text">7584 Olive Street Rd., STE 203<br>St. Louis, Missouri</span>
             </div>
           </div>
         </div>
