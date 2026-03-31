@@ -6,7 +6,77 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Inn From the Storm | Empowering Women After Incarceration</title>
+
+<!-- SEO Meta Tags -->
+<title>Inn From the Storm | Empowering Women After Incarceration | St. Louis MO</title>
+<meta name="description" content="Inn From the Storm is a faith-based nonprofit in University City, MO empowering previously incarcerated women through education, employment, transitional housing, mental health counseling, and supportive services. Founded 2016. Self-referrals welcome.">
+<meta name="keywords" content="Inn From the Storm, reentry services, formerly incarcerated women, St. Louis nonprofit, free legal assistance, GED programs, housing support, employment help, mentorship, court navigation, HIV AIDS resources, women reentry, second chances, Sandi, Hand in Hand">
+<meta name="author" content="Inn From the Storm">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.innfromthestorm.org/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.innfromthestorm.org/">
+<meta property="og:title" content="Inn From the Storm | Empowering Women After Incarceration">
+<meta property="og:description" content="Free reentry services for formerly incarcerated women in St. Louis. Legal assistance, GED programs, housing, employment, and mentorship. 98% success rate.">
+<meta property="og:image" content="https://www.innfromthestorm.org/images/logo.jpg">
+<meta property="og:image:alt" content="Inn From the Storm Logo">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Inn From the Storm">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inn From the Storm | Empowering Women After Incarceration">
+<meta name="twitter:description" content="Free reentry services for formerly incarcerated women in St. Louis. Legal assistance, GED programs, housing, employment, and mentorship.">
+<meta name="twitter:image" content="https://www.innfromthestorm.org/images/logo.jpg">
+
+<!-- Geographic SEO -->
+<meta name="geo.region" content="US-MO">
+<meta name="geo.placename" content="St. Louis">
+<meta name="geo.position" content="38.6554;-90.3348">
+<meta name="ICBM" content="38.6554, -90.3348">
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NonprofitOrganization",
+  "name": "Inn From the Storm",
+  "alternateName": "IFTS",
+  "url": "https://www.innfromthestorm.org",
+  "logo": "https://www.innfromthestorm.org/images/logo.jpg",
+  "image": "https://www.innfromthestorm.org/images/logo.jpg",
+  "description": "Inn From the Storm is a faith-based nonprofit organization committed to empowering previously incarcerated women returning home from prison through education, employment, and supportive services in St. Louis, Missouri. Founded in 2016.",
+  "telephone": "(314) 328-9466",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "7584 Olive Blvd., Ste 202",
+    "addressLocality": "University City",
+    "addressRegion": "MO",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.6554,
+    "longitude": -90.3348
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Sandi Colquitt"
+  },
+  "foundingDate": "2016",
+  "nonprofitStatus": "501c3",
+  "areaServed": {
+    "@type": "City",
+    "name": "St. Louis",
+    "addressRegion": "MO"
+  },
+  "knowsAbout": ["reentry services", "legal assistance", "GED programs", "housing support", "employment assistance", "HIV/AIDS resources", "mentorship", "court navigation"],
+  "sameAs": []
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <style>
@@ -14,18 +84,21 @@
    CSS VARIABLES & RESET
    ═══════════════════════════════════════════ */
 :root {
-  /* Rasta-Inspired Color Scheme - Red, Gold, Green */
-  --wine: #B22222;        /* Rasta Red */
-  --wine-deep: #8B0000;   /* Deep Red */
-  --gold: #DAA520;        /* Rasta Gold */
-  --gold-light: #FFD700;  /* Bright Gold */
+  /* Logo-Inspired Color Scheme - Burgundy, Green, Gold, Orange */
+  --wine: #6B2D3E;        /* Deep Burgundy */
+  --wine-deep: #4A1E2B;   /* Darkest Burgundy */
+  --gold: #C8983C;        /* Rich Gold */
+  --gold-light: #E8C876;  /* Light Gold */
+  --green: #2E6B3A;       /* Forest Green from logo */
+  --green-light: #3D8B4F; /* Lighter Green */
+  --green-pale: rgba(46,107,58,0.08); /* Subtle green tint */
   --cream: #FDF6EC;
   --cream-dark: #F0E4D0;
   --charcoal: #2A2A2A;
   --warm-gray: #7A7068;
   --soft-white: #FFFDF9;
-  --sage: #228B22;        /* Rasta Green */
-  --coral: #C4705A;
+  --sage: #2E6B3A;        /* Forest Green (alias) */
+  --burnt-orange: #C4705A; /* Warm orange from logo */
   --font-display: 'DM Serif Display', serif;
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Outfit', sans-serif;
@@ -126,6 +199,17 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-green {
+  background: var(--green);
+  color: white;
+  box-shadow: 0 4px 20px rgba(46,107,58,0.3);
+}
+.btn-green:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(46,107,58,0.4);
+}
+
 .btn-white {
   background: white;
   color: var(--wine);
@@ -140,7 +224,8 @@ body {
    ANNOUNCEMENT BAR
    ═══════════════════════════════════════════ */
 .announcement-bar {
-  background: var(--wine-deep);
+  background: linear-gradient(90deg, var(--wine-deep), var(--green) 50%, var(--wine-deep));
+  background-size: 200% 100%;
   color: white;
   text-align: center;
   padding: 10px 24px;
@@ -195,6 +280,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  border: 2px solid var(--green);
 }
 
 .logo-icon::before {
@@ -205,17 +291,17 @@ body {
   border: 2.5px solid var(--gold-light);
   border-radius: 50%;
   top: 7px;
-  left: 12px;
+  left: 10px;
 }
 .logo-icon::after {
   content: '';
   position: absolute;
   width: 20px;
   height: 20px;
-  border: 2.5px solid white;
+  border: 2.5px solid var(--green-light);
   border-radius: 50%;
   top: 15px;
-  left: 12px;
+  left: 10px;
 }
 
 .logo-text {
@@ -227,18 +313,21 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--charcoal);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 0.3px;
   position: relative;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -305,7 +394,9 @@ body {
   right: -20%;
   width: 80%;
   height: 200%;
-  background: radial-gradient(ellipse, rgba(200, 152, 60, 0.12) 0%, transparent 70%);
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(46,107,58,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 60%, rgba(200,152,60,0.12) 0%, transparent 70%);
   animation: heroGlow 8s ease-in-out infinite alternate;
 }
 
@@ -429,40 +520,23 @@ body {
 }
 
 .hero-img-main {
-  width: 80%;
-  height: 85%;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   border-radius: 20px;
-  background: url('images/ifts-booth.jpg') center/cover no-repeat;
+  background: var(--wine-deep) url('images/logo.jpg') center/cover no-repeat;
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0,0,0,0.3);
 }
 
 .hero-img-main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(74,30,43,0.6) 100%);
-  background-size: cover;
+  display: none;
 }
 
 .hero-img-accent {
-  position: absolute;
-  bottom: -10px;
-  left: -10px;
-  width: 50%;
-  height: 50%;
-  border-radius: 16px;
-  background: var(--gold);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  box-shadow: 0 20px 60px rgba(200,152,60,0.3);
-  z-index: 2;
+  display: none;
 }
 
 .hero-img-accent .accent-icon {
@@ -496,8 +570,8 @@ body {
    ═══════════════════════════════════════════ */
 .impact-ticker {
   background: var(--cream);
-  border-top: 1px solid rgba(107,45,62,0.06);
-  border-bottom: 1px solid rgba(107,45,62,0.06);
+  border-top: 2px solid rgba(46,107,58,0.15);
+  border-bottom: 2px solid rgba(46,107,58,0.15);
   padding: 50px 0;
   overflow: hidden;
 }
@@ -524,6 +598,9 @@ body {
   color: var(--gold);
   font-size: 0.7rem;
 }
+
+.ticker-item:nth-child(3n) i { color: var(--green); }
+.ticker-item:nth-child(3n+2) i { color: var(--wine); }
 
 @keyframes ticker {
   0% { transform: translateX(0); }
@@ -585,13 +662,17 @@ body {
   height: 42px;
   min-width: 42px;
   border-radius: 10px;
-  background: var(--wine);
+  background: var(--green);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
 }
+
+.about-feature:nth-child(2) .about-feature-icon { background: var(--wine); }
+.about-feature:nth-child(3) .about-feature-icon { background: var(--gold); }
+.about-feature:nth-child(4) .about-feature-icon { background: var(--wine); }
 
 .about-feature h4 {
   font-family: var(--font-body);
@@ -617,7 +698,7 @@ body {
   aspect-ratio: 4/5;
   border-radius: 24px;
   overflow: hidden;
-  background: url('images/golf-foursome.jpg') center/cover no-repeat;
+  background: url('images/trophy-winner.jpg') center/cover no-repeat;
   position: relative;
   box-shadow: 0 30px 60px rgba(107,45,62,0.08);
 }
@@ -640,6 +721,7 @@ body {
   box-shadow: 0 15px 50px rgba(0,0,0,0.1);
   max-width: 300px;
   z-index: 2;
+  border-left: 4px solid var(--green);
 }
 
 .about-quote p {
@@ -678,7 +760,17 @@ body {
   right: 0;
   width: 50%;
   height: 100%;
-  background: radial-gradient(ellipse at 80% 50%, rgba(200,152,60,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 80% 50%, rgba(46,107,58,0.1) 0%, transparent 70%);
+}
+
+.impact::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(ellipse at 20% 80%, rgba(200,152,60,0.06) 0%, transparent 70%);
 }
 
 .impact .section-label { color: var(--gold-light); }
@@ -720,6 +812,9 @@ body {
   margin: 0 auto 20px;
   font-size: 1.3rem;
 }
+
+.impact-stat-card:nth-child(2) .impact-stat-icon { background: rgba(46,107,58,0.2); color: #7CDB8E; }
+.impact-stat-card:nth-child(4) .impact-stat-icon { background: rgba(46,107,58,0.2); color: #7CDB8E; }
 
 .impact-stat-number {
   font-family: var(--font-display);
@@ -796,8 +891,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), var(--gold), var(--wine), transparent);
 }
 
 .services-grid {
@@ -823,10 +918,18 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gold);
+  background: var(--green);
   transform: scaleX(0);
   transition: transform 0.4s;
 }
+
+/* Alternate service card top bar colors */
+.service-card:nth-child(2)::before { background: var(--gold); }
+.service-card:nth-child(3)::before { background: var(--wine); }
+.service-card:nth-child(5)::before { background: var(--gold); }
+.service-card:nth-child(6)::before { background: var(--wine); }
+.service-card:nth-child(8)::before { background: var(--gold); }
+.service-card:nth-child(9)::before { background: var(--wine); }
 
 .service-card:hover {
   transform: translateY(-8px);
@@ -841,7 +944,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+  background: linear-gradient(135deg, var(--green), var(--green-light));
   color: white;
   display: flex;
   align-items: center;
@@ -849,6 +952,16 @@ body {
   font-size: 1.4rem;
   margin-bottom: 24px;
 }
+
+/* Alternate service icon colors */
+.service-card:nth-child(2) .service-icon { background: linear-gradient(135deg, var(--wine), var(--wine-deep)); }
+.service-card:nth-child(3) .service-icon { background: linear-gradient(135deg, var(--gold), #B8882C); }
+.service-card:nth-child(4) .service-icon { background: linear-gradient(135deg, var(--wine), var(--wine-deep)); }
+.service-card:nth-child(5) .service-icon { background: linear-gradient(135deg, var(--green), var(--green-light)); }
+.service-card:nth-child(6) .service-icon { background: linear-gradient(135deg, var(--gold), #B8882C); }
+.service-card:nth-child(7) .service-icon { background: linear-gradient(135deg, var(--wine), var(--wine-deep)); }
+.service-card:nth-child(8) .service-icon { background: linear-gradient(135deg, var(--green), var(--green-light)); }
+.service-card:nth-child(9) .service-icon { background: linear-gradient(135deg, var(--gold), #B8882C); }
 
 .service-card h3 {
   font-family: var(--font-display);
@@ -862,6 +975,43 @@ body {
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 20px;
+}
+
+/* Why section prose */
+.why-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.why-content p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.why-content h3 {
+  font-family: var(--font-display);
+  color: var(--wine-deep);
+  margin: 32px 0 16px;
+  font-size: 1.4rem;
+}
+
+.why-content ul {
+  margin: 0 0 16px 24px;
+  list-style: disc;
+  line-height: 1.8;
+}
+
+.service-card ul {
+  color: var(--warm-gray);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  margin: 8px 0 16px 20px;
+  list-style: disc;
+  text-align: left;
+}
+
+.service-card ul li {
+  margin-bottom: 2px;
 }
 
 .service-tag {
@@ -1102,8 +1252,8 @@ body {
   text-align: center;
 }
 
-.event-card:nth-child(2) .event-date-bar { background: var(--gold); }
-.event-card:nth-child(3) .event-date-bar { background: var(--sage); }
+.event-card:nth-child(2) .event-date-bar { background: var(--green); }
+.event-card:nth-child(3) .event-date-bar { background: var(--gold); }
 
 /* ═══════════════════════════════════════════
    GALLERY SECTION
@@ -1145,12 +1295,12 @@ body {
 
 .gallery-item:hover::after { opacity: 1; }
 
-.gallery-item:nth-child(1) { grid-column: span 2; background: linear-gradient(135deg, #D4A574, #C4705A); }
+.gallery-item:nth-child(1) { grid-column: span 2; background: linear-gradient(135deg, var(--green), var(--green-light)); }
 .gallery-item:nth-child(2) { background: linear-gradient(135deg, var(--wine), #8B3D52); }
 .gallery-item:nth-child(3) { background: linear-gradient(135deg, var(--gold), #A87D30); }
-.gallery-item:nth-child(4) { grid-row: span 2; background: linear-gradient(135deg, var(--sage), #8BA07A); }
-.gallery-item:nth-child(5) { background: linear-gradient(135deg, #C4705A, var(--wine)); }
-.gallery-item:nth-child(6) { grid-column: span 2; background: linear-gradient(135deg, var(--wine-deep), var(--wine)); }
+.gallery-item:nth-child(4) { grid-row: span 2; background: linear-gradient(135deg, var(--green), var(--green-light)); }
+.gallery-item:nth-child(5) { background: linear-gradient(135deg, var(--burnt-orange), var(--wine)); }
+.gallery-item:nth-child(6) { grid-column: span 2; background: linear-gradient(135deg, var(--wine-deep), var(--green)); }
 
 .gallery-label {
   position: absolute;
@@ -1234,7 +1384,8 @@ body {
   color: var(--warm-gray);
   font-size: 1.05rem;
   line-height: 1.8;
-  max-width: 550px;
+  max-width: 700px;
+  margin-bottom: 12px;
 }
 
 .board-carousel-wrapper {
@@ -1360,9 +1511,9 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(200,152,60,0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 40%);
+  background:
+    radial-gradient(circle at 20% 80%, rgba(46,107,58,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(200,152,60,0.08) 0%, transparent 40%);
 }
 
 .donate-content {
@@ -1487,13 +1638,16 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--cream);
-  color: var(--wine);
+  background: var(--green-pale);
+  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
 }
+
+.contact-channel:nth-child(2) .contact-channel-icon { background: var(--cream); color: var(--wine); }
+.contact-channel:nth-child(3) .contact-channel-icon { background: rgba(200,152,60,0.1); color: var(--gold); }
 
 .contact-channel-text {
   font-weight: 500;
@@ -1516,7 +1670,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--wine);
+  background: var(--green);
   color: white;
   display: flex;
   align-items: center;
@@ -1527,10 +1681,15 @@ body {
 }
 
 .social-link:hover {
-  background: var(--wine-deep);
+  background: var(--green-light);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(107,45,62,0.3);
+  box-shadow: 0 8px 20px rgba(46,107,58,0.3);
 }
+
+.social-link:nth-child(2) { background: var(--wine); }
+.social-link:nth-child(2):hover { background: var(--wine-deep); box-shadow: 0 8px 20px rgba(107,45,62,0.3); }
+.social-link:nth-child(3) { background: var(--gold); }
+.social-link:nth-child(3):hover { background: #B8882C; box-shadow: 0 8px 20px rgba(200,152,60,0.3); }
 
 .contact-form-wrapper {
   background: white;
@@ -1594,9 +1753,9 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--gold);
+  border-color: var(--green);
   background: white;
-  box-shadow: 0 0 0 4px rgba(200,152,60,0.1);
+  box-shadow: 0 0 0 4px var(--green-pale);
 }
 
 .form-group textarea { resize: vertical; min-height: 120px; }
@@ -1638,6 +1797,7 @@ body {
   background: var(--charcoal);
   color: white;
   padding: 70px 0 30px;
+  border-top: 3px solid var(--green);
 }
 
 .footer-grid {
@@ -1739,6 +1899,25 @@ body {
    RESPONSIVE
    ═══════════════════════════════════════════ */
 @media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: flex; }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    gap: 8px;
+    z-index: 1000;
+  }
+  .nav-links.active li { width: 100%; }
+  .nav-links.active a { display: block; padding: 10px 16px; border-radius: 8px; font-size: 1rem; }
+  .nav-links.active a:hover { background: rgba(107,45,62,0.05); }
+  .nav-links.active .nav-donate { text-align: center; margin-top: 8px; }
   .hero-content { grid-template-columns: 1fr; padding: 0 24px; }
   .hero-visual { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 50px; }
@@ -1754,25 +1933,12 @@ body {
   .board-card { min-width: calc(33.333% - 14px); }
   .team-featured { grid-template-columns: 1fr; text-align: center; padding: 36px; }
   .team-featured-avatar { margin: 0 auto; }
-  .team-featured-info p { margin: 0 auto; }
+  .team-featured-info p { margin: 0 auto; text-align: left; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .mobile-toggle { display: flex; }
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--cream);
-    padding: 24px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  }
   .hero { min-height: 80vh; }
   .hero h1 { font-size: 2.4rem; }
   .hero-stats { flex-direction: column; gap: 20px; }
@@ -1781,6 +1947,7 @@ body {
   .impact-stats-grid { grid-template-columns: 1fr 1fr; }
   .impact-highlight { flex-direction: column; text-align: center; padding: 30px; }
   .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 28px 24px; }
   .stories-grid { grid-template-columns: 1fr; }
   .events-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 160px); }
@@ -1791,6 +1958,14 @@ body {
   .footer-grid { grid-template-columns: 1fr; }
   .section-pad { padding: 70px 0; }
   .contact-form-wrapper { padding: 28px; }
+  .team-featured { padding: 28px; gap: 24px; }
+  .team-featured-avatar { width: 120px; height: 120px; font-size: 2.5rem; }
+  .team-featured-info h3 { font-size: 1.6rem; }
+  .team-featured-info p { font-size: 0.95rem; max-width: 100%; }
+  .why-content { padding: 0 8px; }
+  .why-content h3 { font-size: 1.2rem; margin: 24px 0 12px; }
+  .why-content ul { margin-left: 16px; }
+  .why-content p { font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
@@ -1800,6 +1975,20 @@ body {
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(6, 160px); }
   .gallery-item:nth-child(1),
   .gallery-item:nth-child(6) { grid-column: span 1; }
+  .hero h1 { font-size: 1.8rem; }
+  .section-title { font-size: 1.6rem; }
+  .section-pad { padding: 50px 0; }
+  .service-card { padding: 24px 20px; }
+  .service-card h3 { font-size: 1.2rem; }
+  .team-featured { padding: 24px 20px; }
+  .team-featured-avatar { width: 100px; height: 100px; font-size: 2rem; }
+  .team-featured-info h3 { font-size: 1.4rem; }
+  .team-featured-info p { font-size: 0.9rem; line-height: 1.7; }
+  .contact-form-wrapper { padding: 20px 16px; }
+  .btn { padding: 14px 28px; font-size: 0.9rem; }
+  .why-content p { font-size: 0.9rem; line-height: 1.7; }
+  .why-content h3 { font-size: 1.1rem; }
+  .why-content ul { font-size: 0.9rem; }
 }
 
 /* ═══════════════════════════════════════════
@@ -1991,6 +2180,213 @@ body {
   text-align: center;
 }
 .admin-login input:focus { outline: none; border-color: var(--gold); }
+
+/* Enhanced Admin Styles */
+.admin-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.admin-help {
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  margin-top: 4px;
+  font-style: italic;
+}
+.admin-section-header {
+  font-family: var(--font-display);
+  color: var(--wine-deep);
+  font-size: 1.1rem;
+  margin: 24px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-section-header i { color: var(--gold); }
+.admin-section-header:first-child { margin-top: 0; }
+
+.admin-info-box {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.admin-info-box i { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+.admin-success-box {
+  background: #d4edda;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: #155724;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.admin-success-box i { flex-shrink: 0; }
+
+.admin-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.admin-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+.admin-story-item,
+.admin-gallery-item,
+.admin-service-item {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.admin-story-item .admin-remove,
+.admin-gallery-item .admin-remove,
+.admin-service-item .admin-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.admin-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.admin-toggle-switch {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.admin-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.admin-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: var(--cream-dark);
+  border-radius: 26px;
+  transition: 0.3s;
+}
+.admin-toggle-slider::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.admin-toggle-switch input:checked + .admin-toggle-slider {
+  background: var(--green);
+}
+.admin-toggle-switch input:checked + .admin-toggle-slider::before {
+  transform: translateX(22px);
+}
+.admin-toggle-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.admin-toggle-desc {
+  font-size: 0.78rem;
+  color: var(--warm-gray);
+}
+
+.admin-color-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.admin-color-row label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 140px;
+}
+.admin-color-row input[type="color"] {
+  width: 44px;
+  height: 34px;
+  border: 2px solid var(--cream-dark);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.admin-autosave-status {
+  font-size: 0.78rem;
+  color: var(--warm-gray);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+.admin-autosave-status.saved { color: var(--green); }
+
+.admin-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.admin-badge-past { background: #f8d7da; color: #842029; }
+.admin-badge-upcoming { background: #d4edda; color: #0f5132; }
+.admin-badge-auto { background: #cff4fc; color: #055160; }
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.admin-topbar h2 { margin-bottom: 0; }
+
+.admin-undo-bar {
+  background: #fff3cd;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #664d03;
+}
+.admin-undo-bar.visible { display: flex; }
+.admin-undo-bar button {
+  background: var(--wine);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .admin-grid-2, .admin-grid-3 { grid-template-columns: 1fr; }
+  .admin-tabs { gap: 4px; }
+  .admin-tab { padding: 8px 12px; font-size: 0.78rem; }
+}
 </style>
 </head>
 <body>
@@ -2004,11 +2400,12 @@ body {
 <nav class="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <img src="images/logo.jpg" alt="Inn From the Storm Logo" style="height: 50px; width: auto; border-radius: 8px;">
+      <div class="logo-icon"></div>
       <span class="logo-text">Inn From the Storm</span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
+      <li><a href="#why">Our Why</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#stories">Stories</a></li>
@@ -2033,7 +2430,7 @@ body {
       <h1>Every Woman Deserves a <em>Second Chapter</em></h1>
       <p class="hero-description">We provide free services, legal guidance, and unwavering community support to help formerly incarcerated women rebuild their lives with dignity and purpose.</p>
       <div class="hero-ctas">
-        <a href="#services" class="btn btn-gold"><i class="bi bi-heart-fill"></i> Get Help Now</a>
+        <a href="#services" class="btn btn-green"><i class="bi bi-heart-fill"></i> Get Help Now</a>
         <a href="#donate" class="btn btn-white"><i class="bi bi-gift-fill"></i> Support Our Mission</a>
       </div>
       <div class="hero-stats">
@@ -2099,17 +2496,22 @@ body {
       <h2 class="section-title">See the Impact</h2>
       <p class="section-subtitle">Learn more about Inn From the Storm and the lives we're changing.</p>
     </div>
-    <div class="reveal" style="max-width: 800px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
-      <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-        <iframe 
-          src="https://www.youtube.com/embed/I1_18csbZUE" 
+    <div class="reveal" style="max-width: 800px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); background: var(--charcoal);">
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe
+          src="https://www.youtube.com/embed/I1_18csbZUE?rel=0&modestbranding=1"
           title="Inn From the Storm Video"
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          loading="lazy"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
         </iframe>
       </div>
+      <noscript>
+        <p style="color:white;text-align:center;padding:40px;">Please enable JavaScript to view the video.</p>
+      </noscript>
     </div>
   </div>
 </section>
@@ -2121,8 +2523,8 @@ body {
       <div class="about-text reveal">
         <span class="section-label">Our Mission</span>
         <h2 class="section-title">Walking Alongside Women into Freedom</h2>
-        <p>Inn From the Storm was founded with a simple but powerful belief: no woman should navigate life after incarceration alone. We serve as a bridge between the system and a better future — providing the tools, connections, and community that make lasting change possible.</p>
-        <p>Our focus on African American women reflects the disproportionate impact the justice system has on our community. Through education, legal support, health resources, and wraparound services, we are rewriting the narrative — one woman at a time.</p>
+        <p>Inn From the Storm is a faith-based nonprofit organization committed to empowering previously incarcerated women returning home through education, employment, and supportive services. Founded in 2016 as a fully formed 501(c)(3), we serve as a bridge between the system and a better future — providing the tools, connections, and community that make lasting change possible.</p>
+        <p>Our focus on African American women reflects the disproportionate impact the justice system has on our community. We offer a 3–6 month transitional discharge plan that begins prior to release, followed by creative Transitional Case Management Service Plans based on comprehensive individual assessments — rewriting the narrative one woman at a time.</p>
         <div class="about-features">
           <div class="about-feature">
             <div class="about-feature-icon"><i class="bi bi-hammer"></i></div>
@@ -2157,10 +2559,33 @@ body {
       <div class="about-image-block reveal reveal-delay-2">
         <div class="about-img-wrapper"></div>
         <div class="about-quote">
-          <p>"We don't just open the door — we walk through it together."</p>
-          <cite>— Sandi, Founder</cite>
+          <p>"Come Inn From The Storm and leave with a Blessing."</p>
+          <cite>— Sandi Colquitt, Founder &amp; CEO</cite>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHY WE DO THIS ═══════════ -->
+<section class="section-pad" id="why" style="background: var(--cream);">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Why We Do This</span>
+      <h2 class="section-title">The Pattern We Recognized</h2>
+    </div>
+    <div class="why-content reveal">
+      <p>In the many years of working with individuals, providing supportive services, we recognized a pattern. One, no jobs for the returning citizen with a record. Two, women are more likely to have been the primary caretakers of children prior to entering prison and are more likely to return to that role once released. Women's incarceration has caused a significant disruption in their children's and family lives. They are constantly worrying about the welfare of their children during their incarceration. Incarcerated women stand to lose their parental rights if they do not stay abreast of child welfare actions that require regular contact between a parent and a child placed in foster care. Third, but not last, if the woman can't get a job, they can't pay their fines, pay rent, child support, transportation or even get a birth certificate or state ID. Without a means of support, many will be re-incarcerated and the cycle begins again.</p>
+      <h3>Why Women</h3>
+      <p>The population of women offenders is growing and continues to grow at a faster rate than the population of men. Many feel that the increase is due to changes in state and national drug policies that mandated prison terms for even relatively low-level drug offenses. According to the Statistics on Women Offenders — 2015, the female jail population has been the fastest growing correctional population, increasing by an average annual rate of 3.4 percent. This does not include women under community supervision.</p>
+      <p>Women become involved in criminal behavior for different reasons than men:</p>
+      <ul>
+        <li>Survival of abuse</li>
+        <li>Poverty</li>
+        <li>Substance abuse</li>
+      </ul>
+      <p>These reasons need to be considered when trying to keep women from reentering the penal system once released.</p>
+      <p>The relationship between the following three factors are significant and are very common in the life histories of women offenders: physical, sexual, and emotional abuse.</p>
     </div>
   </div>
 </section>
@@ -2170,8 +2595,8 @@ body {
   <div class="container">
     <div class="text-center reveal">
       <span class="section-label">The Data Speaks</span>
-      <h2 class="section-title">Why This Work Matters</h2>
-      <p class="section-subtitle">Research from the CDC and State of Missouri reveals the urgent need for reentry support — especially for African American women.</p>
+      <h2 class="section-title">The Numbers Behind Our Mission</h2>
+      <p class="section-subtitle">Research from the CDC and State of Missouri reveals the urgent need for reentry support — especially for women.</p>
     </div>
     <div class="impact-stats-grid">
       <div class="impact-stat-card reveal">
@@ -2212,7 +2637,7 @@ body {
     <div class="text-center reveal">
       <span class="section-label">What We Offer</span>
       <h2 class="section-title">All Services Are Completely Free</h2>
-      <p class="section-subtitle">From the moment you come home, we're here. Every service we provide is free of charge — because rebuilding shouldn't come with a price tag.</p>
+      <p class="section-subtitle">Inn From The Storm, Inc. is committed to providing quality services with results. We offer a multitude of programs designed to mitigate problems for ex-offenders to concentrate on while adjusting to life on the outside — all completely free of charge.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
@@ -2223,15 +2648,15 @@ body {
       </div>
       <div class="service-card reveal reveal-delay-1">
         <div class="service-icon"><i class="bi bi-mortarboard-fill"></i></div>
-        <h3>Education &amp; GED</h3>
-        <p>Access to GED programs, vocational training, and educational resources that open doors to new careers and possibilities.</p>
+        <h3>Educational Training</h3>
+        <p>Educational training assisting with obtaining your GED, plus vocational training and educational resources that open doors to new careers and possibilities.</p>
         <span class="service-tag">GED Programs</span>
       </div>
       <div class="service-card reveal reveal-delay-2">
         <div class="service-icon"><i class="bi bi-heart-pulse-fill"></i></div>
         <h3>Health &amp; Wellness</h3>
-        <p>Comprehensive health support including HIV/AIDS resources, mental health services, substance abuse counseling, and connection to healthcare providers.</p>
-        <span class="service-tag">HIV/AIDS Support</span>
+        <p>Health assessments, mental health counseling, HIV/AIDS resources, substance abuse counseling, and connection to healthcare providers.</p>
+        <span class="service-tag">Health Assessment</span>
       </div>
       <div class="service-card reveal">
         <div class="service-icon"><i class="bi bi-house-fill"></i></div>
@@ -2241,8 +2666,8 @@ body {
       </div>
       <div class="service-card reveal reveal-delay-1">
         <div class="service-icon"><i class="bi bi-briefcase-fill"></i></div>
-        <h3>Employment Help</h3>
-        <p>Resume building, job placement assistance, interview preparation, and partnerships with employers who believe in second chances.</p>
+        <h3>Employment Services</h3>
+        <p>Employment services, vocational training, job placement, resume building, interview preparation, and partnerships with employers who believe in second chances.</p>
         <span class="service-tag">Job Placement</span>
       </div>
       <div class="service-card reveal reveal-delay-2">
@@ -2250,6 +2675,34 @@ body {
         <h3>Hand in Hand Mentorship</h3>
         <p>Our signature peer mentorship program connects women who've successfully reintegrated with those just beginning their journey home.</p>
         <span class="service-tag">Peer Support</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="bi bi-chat-heart-fill"></i></div>
+        <h3>In-House Therapy</h3>
+        <p>Our in-house therapist provides each returning citizen a personalized care plan. Guidance and direction are a top priority — a motivated person will receive the help they need.</p>
+        <span class="service-tag">Mental Health</span>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><i class="bi bi-calendar-event-fill"></i></div>
+        <h3>Activities &amp; Enrichment</h3>
+        <p>Our Transitional Managers coordinate a wide variety of activities for our returning citizens:</p>
+        <ul>
+          <li>Job Fairs</li>
+          <li>Health Fairs</li>
+          <li>Dress for Success</li>
+          <li>Family Night</li>
+          <li>Neighborhood Parties</li>
+          <li>Grooming</li>
+          <li>Job Readiness Training</li>
+          <li>Job Shadowing</li>
+        </ul>
+        <span class="service-tag">Community Activities</span>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><i class="bi bi-bus-front-fill"></i></div>
+        <h3>Transportation &amp; Community Service</h3>
+        <p>Transportation services to help you get where you need to go, plus community service opportunities that build connections and give back to the neighborhoods that welcome you home.</p>
+        <span class="service-tag">Transportation</span>
       </div>
     </div>
     <div class="text-center" style="margin-top: 50px;">
@@ -2437,9 +2890,11 @@ body {
     <div class="team-featured reveal">
       <div class="team-featured-avatar" style="background: url('images/sandi-founder.jpg') center/cover no-repeat; font-size: 0;"></div>
       <div class="team-featured-info">
-        <h3>Sandi</h3>
-        <span class="team-featured-role">Founder &amp; Executive Director</span>
-        <p>Sandi is the heart and soul of Inn From the Storm. Her vision, dedication, and personal commitment to every woman who walks through our doors has built this organization from the ground up. Under her leadership, we've maintained an extraordinary success rate — proving that with genuine care and comprehensive support, real transformation is possible.</p>
+        <h3>Sandi Colquitt</h3>
+        <span class="team-featured-role">Founder &amp; CEO</span>
+        <p>Sandi Colquitt is the Founder and CEO of Inn From the Storm, a community-driven nonprofit organization dedicated to assisting underserved women returning home from prison in the community. Sandi was raised in St. Louis, Missouri, attended elementary and high school in the area, and participated in community programs throughout the city. Her parents raised her and her siblings to understand that education was very important in life and taught them to be powerful in the community if they wanted to see change. Sandi is a highly experienced and elected government official with over 25 years of experience.</p>
+        <p>Sandi obtained her undergraduate degree in Business Administration from Fontbonne University and completed her Master of Health and Public Administration from Webster University. In addition to operating Inn From The Storm, she also works as an Organizational Effectiveness Officer for one of the largest employers in the State of Missouri. She is an active participant in multiple community service organizations, holds a State and Local political office, and is a member of professional organizations throughout the St. Louis Metropolitan Area.</p>
+        <p>After years of working with males and females returning home from prison infected and affected with HIV/AIDS, caring for ailing family members, and having the goal of launching a nonprofit organization benefiting her community, Inn From The Storm was founded in 2016. In September 2016, the organization became a fully formed 501(c)(3) with great support from her community, children, and friends. Sandi has a heart for seeing women thrive and is blessed to be a part of Inn From the Storm.</p>
       </div>
     </div>
     <h3 class="text-center reveal" style="font-family: var(--font-display); color: var(--wine-deep); font-size: 1.3rem; margin-bottom: 28px;">Board of Directors</h3>
@@ -2447,28 +2902,43 @@ body {
       <div class="board-carousel" id="boardCarousel">
         <div class="board-card">
           <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
-          <h4>Board Member 1</h4>
+          <h4>Derrick Colquitt</h4>
           <p>Director</p>
         </div>
         <div class="board-card">
           <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
-          <h4>Board Member 2</h4>
+          <h4>Aja Brown</h4>
           <p>Director</p>
         </div>
         <div class="board-card">
           <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
-          <h4>Board Member 3</h4>
+          <h4>Delores Grady</h4>
           <p>Director</p>
         </div>
         <div class="board-card">
           <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
-          <h4>Board Member 4</h4>
+          <h4>Cina Winfrey</h4>
           <p>Director</p>
         </div>
         <div class="board-card">
           <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
-          <h4>Board Member 5</h4>
+          <h4>Denise Smith</h4>
           <p>Director</p>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
+          <h4>Andre Cofer</h4>
+          <p>Director</p>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
+          <h4>Atty. Danelle Carter</h4>
+          <p>Director</p>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar"><i class="bi bi-person-fill"></i></div>
+          <h4>Atty. Thomas Applewhite</h4>
+          <p>Honorary Board Member</p>
         </div>
       </div>
       <div class="carousel-controls">
@@ -2528,7 +2998,7 @@ body {
             <div class="contact-channel-icon"><i class="bi bi-envelope-fill"></i></div>
             <div>
               <span class="contact-channel-label">Email</span>
-              <span class="contact-channel-text" id="contactEmail" data-user="info" data-domain="innfromthestorm.org"></span>
+              <span class="contact-channel-text" id="contactEmail" data-user="nfromthestormlllc" data-domain="gmail.com"></span>
             </div>
           </div>
           <div class="contact-channel">
@@ -2542,7 +3012,7 @@ body {
             <div class="contact-channel-icon"><i class="bi bi-geo-alt-fill"></i></div>
             <div>
               <span class="contact-channel-label">Location</span>
-              <span class="contact-channel-text">7584 Olive Street Rd., STE 203<br>St. Louis, Missouri</span>
+              <span class="contact-channel-text">7584 Olive Blvd., Ste 202<br>University City, MO 63130</span>
             </div>
           </div>
         </div>
@@ -2558,12 +3028,18 @@ body {
           <h3>General Purpose Referral Form</h3>
           <p>For self-referrals, attorney referrals, and court referrals</p>
         </div>
-        <form id="referralForm" novalidate>
+        <form id="referralForm" action="https://formsubmit.co/amari@luniero.com" method="POST">
           <!-- Honeypot field - hidden from users, catches bots -->
           <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
             <label for="website_url">Website</label>
             <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
           </div>
+          <!-- Formsubmit.co config -->
+          <input type="hidden" name="_subject" value="New IFTS Referral Form Submission">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="http://localhost:8080/Rising-Together-Website.html#contact">
+          <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Inn From the Storm. We have received your referral and will be in touch soon.">
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name *</label>
@@ -2647,10 +3123,11 @@ body {
         <h4>Services</h4>
         <ul class="footer-links">
           <li><a href="#services">Legal Assistance</a></li>
-          <li><a href="#services">GED Programs</a></li>
+          <li><a href="#services">Educational Training</a></li>
           <li><a href="#services">Health &amp; Wellness</a></li>
           <li><a href="#services">Housing Support</a></li>
-          <li><a href="#services">Employment Help</a></li>
+          <li><a href="#services">Employment Services</a></li>
+          <li><a href="#services">In-House Therapy</a></li>
         </ul>
       </div>
       <div>
@@ -2664,7 +3141,7 @@ body {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Inn From the Storm. All rights reserved. A registered 501(c)(3) nonprofit organization.</p>
+      <p>&copy; 2026 Inn From the Storm. All rights reserved. A registered nonprofit organization.</p>
       <div class="footer-bottom-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
@@ -2693,110 +3170,318 @@ body {
 
     <!-- Admin Content (hidden until login) -->
     <div id="adminContent" style="display:none;">
-      <h2><i class="bi bi-gear-fill"></i> Site Manager</h2>
-      <p class="admin-subtitle">Edit content below. Changes save to your browser and update the page instantly.</p>
+      <div class="admin-topbar">
+        <h2><i class="bi bi-gear-fill"></i> Site Manager</h2>
+        <span class="admin-autosave-status" id="autosaveStatus"><i class="bi bi-cloud-check"></i> All changes saved</span>
+      </div>
+      <p class="admin-subtitle">Edit your website content below. Changes preview live and auto-save as you type.</p>
+
+      <!-- Undo Bar -->
+      <div class="admin-undo-bar" id="adminUndoBar">
+        <i class="bi bi-arrow-counterclockwise"></i>
+        <span>Changes were saved. Want to go back?</span>
+        <button id="adminUndoBtn">Undo</button>
+      </div>
 
       <div class="admin-tabs">
         <button class="admin-tab active" data-tab="general">General</button>
-        <button class="admin-tab" data-tab="board">Board</button>
+        <button class="admin-tab" data-tab="announcement">Banner</button>
+        <button class="admin-tab" data-tab="about">About</button>
+        <button class="admin-tab" data-tab="services">Services</button>
+        <button class="admin-tab" data-tab="stories">Stories</button>
         <button class="admin-tab" data-tab="events">Events</button>
+        <button class="admin-tab" data-tab="gallery">Gallery</button>
+        <button class="admin-tab" data-tab="board">Board</button>
         <button class="admin-tab" data-tab="donations">Donations</button>
         <button class="admin-tab" data-tab="contact">Contact</button>
         <button class="admin-tab" data-tab="statistics">Statistics</button>
+        <button class="admin-tab" data-tab="appearance">Appearance</button>
+        <button class="admin-tab" data-tab="automation">Automation</button>
         <button class="admin-tab" data-tab="settings">Settings</button>
       </div>
 
-      <!-- General Tab -->
+      <!-- ==================== GENERAL TAB ==================== -->
       <div class="admin-section active" id="tab-general">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Edit your organization name, hero section, and founder info. Changes preview on the page as you type.</span>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-building"></i> Organization</h4>
         <div class="admin-field">
           <label>Organization Name</label>
           <input type="text" id="admin-orgName" placeholder="Inn From the Storm">
+          <div class="admin-help">Appears in the navbar, footer, and page title</div>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-stars"></i> Hero Section</h4>
+        <div class="admin-field">
+          <label>Hero Badge Text</label>
+          <input type="text" id="admin-heroBadge" placeholder="Empowering Women Since Day One">
+          <div class="admin-help">Small badge above the headline</div>
         </div>
         <div class="admin-field">
           <label>Hero Headline</label>
           <input type="text" id="admin-heroTitle" placeholder="Every Woman Deserves a Second Chapter">
+          <div class="admin-help">Use &lt;em&gt;text&lt;/em&gt; to italicize a word</div>
         </div>
         <div class="admin-field">
           <label>Hero Description</label>
-          <textarea id="admin-heroDesc"></textarea>
+          <textarea id="admin-heroDesc" placeholder="We provide free services, legal guidance, and unwavering community support..."></textarea>
         </div>
-        <div class="admin-field">
-          <label>Founder Name</label>
-          <input type="text" id="admin-founderName" placeholder="Sandi">
+
+        <h4 class="admin-section-header"><i class="bi bi-speedometer2"></i> Hero Stats (3 quick stats)</h4>
+        <div class="admin-grid-3">
+          <div class="admin-field">
+            <label>Stat 1 Number</label>
+            <input type="text" id="admin-heroStat1Num" placeholder="98%">
+          </div>
+          <div class="admin-field">
+            <label>Stat 2 Number</label>
+            <input type="text" id="admin-heroStat2Num" placeholder="Only 2">
+          </div>
+          <div class="admin-field">
+            <label>Stat 3 Number</label>
+            <input type="text" id="admin-heroStat3Num" placeholder="100%">
+          </div>
+        </div>
+        <div class="admin-grid-3">
+          <div class="admin-field">
+            <label>Stat 1 Label</label>
+            <input type="text" id="admin-heroStat1Label" placeholder="Success Rate">
+          </div>
+          <div class="admin-field">
+            <label>Stat 2 Label</label>
+            <input type="text" id="admin-heroStat2Label" placeholder="Lost to the System">
+          </div>
+          <div class="admin-field">
+            <label>Stat 3 Label</label>
+            <input type="text" id="admin-heroStat3Label" placeholder="Free Services">
+          </div>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-person-heart"></i> Founder</h4>
+        <div class="admin-grid-2">
+          <div class="admin-field">
+            <label>Founder Name</label>
+            <input type="text" id="admin-founderName" placeholder="Sandi Colquitt">
+          </div>
+          <div class="admin-field">
+            <label>Founder Title</label>
+            <input type="text" id="admin-founderTitle" placeholder="Founder & CEO">
+          </div>
         </div>
         <div class="admin-field">
           <label>Founder Bio</label>
-          <textarea id="admin-founderBio"></textarea>
+          <textarea id="admin-founderBio" placeholder="Sandi is the heart and soul of Inn From the Storm..."></textarea>
         </div>
       </div>
 
-      <!-- Board Tab -->
-      <div class="admin-section" id="tab-board">
-        <p style="font-size:0.9rem;color:var(--warm-gray);margin-bottom:16px;">Add or edit board members. Changes appear on the carousel.</p>
-        <div id="adminBoardList"></div>
-        <button class="admin-btn admin-btn-secondary" id="addBoardMember"><i class="bi bi-plus-circle"></i> Add Member</button>
+      <!-- ==================== ANNOUNCEMENT TAB ==================== -->
+      <div class="admin-section" id="tab-announcement">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>The announcement banner appears at the top of your website. Use it for upcoming events or important news.</span>
+        </div>
+        <div class="admin-toggle">
+          <label class="admin-toggle-switch">
+            <input type="checkbox" id="admin-announcementEnabled" checked>
+            <span class="admin-toggle-slider"></span>
+          </label>
+          <div>
+            <div class="admin-toggle-label">Show Announcement Banner</div>
+            <div class="admin-toggle-desc">Toggle the top banner on or off</div>
+          </div>
+        </div>
+        <div class="admin-field">
+          <label>Banner Icon</label>
+          <select id="admin-announcementIcon" style="width:100%;padding:10px 14px;border:2px solid var(--cream-dark);border-radius:10px;font-family:var(--font-body);font-size:0.9rem;">
+            <option value="bi-calendar-event">Calendar (Events)</option>
+            <option value="bi-megaphone-fill">Megaphone (Announcement)</option>
+            <option value="bi-star-fill">Star (Featured)</option>
+            <option value="bi-heart-fill">Heart (Community)</option>
+            <option value="bi-bell-fill">Bell (Alert)</option>
+            <option value="bi-gift-fill">Gift (Fundraiser)</option>
+          </select>
+        </div>
+        <div class="admin-field">
+          <label>Banner Text</label>
+          <input type="text" id="admin-announcementText" placeholder="Multiple events coming up this season!">
+        </div>
+        <div class="admin-field">
+          <label>Link Text</label>
+          <input type="text" id="admin-announcementLink" placeholder="View Schedule →">
+        </div>
+        <div class="admin-field">
+          <label>Link Target (section or URL)</label>
+          <input type="text" id="admin-announcementHref" placeholder="#events">
+          <div class="admin-help">Use #events, #donate, #contact, etc. for page sections, or a full URL</div>
+        </div>
       </div>
 
-      <!-- Events Tab -->
+      <!-- ==================== ABOUT TAB ==================== -->
+      <div class="admin-section" id="tab-about">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Edit the About / Mission section, the inspirational quote, and the video embed.</span>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-bullseye"></i> Mission Section</h4>
+        <div class="admin-field">
+          <label>Section Title</label>
+          <input type="text" id="admin-aboutTitle" placeholder="Walking Alongside Women into Freedom">
+        </div>
+        <div class="admin-field">
+          <label>Mission Paragraph 1</label>
+          <textarea id="admin-aboutP1" placeholder="Inn From the Storm was founded with a simple but powerful belief..."></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Mission Paragraph 2</label>
+          <textarea id="admin-aboutP2" placeholder="Our focus on African American women reflects..."></textarea>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-chat-quote-fill"></i> Inspirational Quote</h4>
+        <div class="admin-field">
+          <label>Quote Text</label>
+          <input type="text" id="admin-aboutQuote" placeholder="We don't just open the door — we walk through it together.">
+        </div>
+        <div class="admin-field">
+          <label>Quote Author</label>
+          <input type="text" id="admin-aboutQuoteAuthor" placeholder="Sandi Colquitt, Founder & CEO">
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-youtube"></i> Video Section</h4>
+        <div class="admin-field">
+          <label>YouTube Video URL</label>
+          <input type="text" id="admin-videoUrl" placeholder="https://www.youtube.com/embed/I1_18csbZUE">
+          <div class="admin-help">Paste the full YouTube embed URL (right-click video > Copy embed code, then use the URL from src="...")</div>
+        </div>
+        <div class="admin-field">
+          <label>Video Section Title</label>
+          <input type="text" id="admin-videoTitle" placeholder="See the Impact">
+        </div>
+        <div class="admin-field">
+          <label>Video Section Description</label>
+          <input type="text" id="admin-videoDesc" placeholder="Learn more about Inn From the Storm and the lives we're changing.">
+        </div>
+      </div>
+
+      <!-- ==================== SERVICES TAB ==================== -->
+      <div class="admin-section" id="tab-services">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Edit the services your organization offers. Each service shows as a card on the website.</span>
+        </div>
+        <div id="adminServiceList"></div>
+        <button class="admin-btn admin-btn-secondary" id="addService"><i class="bi bi-plus-circle"></i> Add Service</button>
+      </div>
+
+      <!-- ==================== STORIES TAB ==================== -->
+      <div class="admin-section" id="tab-stories">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Manage the testimonial stories displayed on the website. Real stories build trust and show your impact.</span>
+        </div>
+        <div id="adminStoryList"></div>
+        <button class="admin-btn admin-btn-secondary" id="addStory"><i class="bi bi-plus-circle"></i> Add Story</button>
+      </div>
+
+      <!-- ==================== EVENTS TAB ==================== -->
       <div class="admin-section" id="tab-events">
-        <p style="font-size:0.9rem;color:var(--warm-gray);margin-bottom:16px;">Manage upcoming events displayed on the website.</p>
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Manage upcoming events. Past events are automatically flagged. You can choose to auto-hide them.</span>
+        </div>
         <div id="adminEventList"></div>
         <button class="admin-btn admin-btn-secondary" id="addEvent"><i class="bi bi-plus-circle"></i> Add Event</button>
       </div>
 
-      <!-- Donations Tab -->
+      <!-- ==================== GALLERY TAB ==================== -->
+      <div class="admin-section" id="tab-gallery">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Manage your photo gallery. Add images from your events, community gatherings, and celebrations.</span>
+        </div>
+        <div id="adminGalleryList"></div>
+        <button class="admin-btn admin-btn-secondary" id="addGalleryItem"><i class="bi bi-plus-circle"></i> Add Photo</button>
+      </div>
+
+      <!-- ==================== BOARD TAB ==================== -->
+      <div class="admin-section" id="tab-board">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Add or edit board members. Initials are auto-generated from names. Changes appear on the carousel.</span>
+        </div>
+        <div id="adminBoardList"></div>
+        <button class="admin-btn admin-btn-secondary" id="addBoardMember"><i class="bi bi-plus-circle"></i> Add Member</button>
+      </div>
+
+      <!-- ==================== DONATIONS TAB ==================== -->
       <div class="admin-section" id="tab-donations">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Update your donation payment handles. These appear on the Donate section of the website.</span>
+        </div>
         <div class="admin-field">
-          <label>CashApp Handle</label>
+          <label><i class="bi bi-cash-stack" style="color:var(--green);"></i> CashApp Handle</label>
           <input type="text" id="admin-cashapp" placeholder="@InnFromTheStorm">
         </div>
         <div class="admin-field">
-          <label>PayPal Handle/Email</label>
+          <label><i class="bi bi-paypal" style="color:#003087;"></i> PayPal Handle/Email</label>
           <input type="text" id="admin-paypal" placeholder="donate@innfromthestorm.org">
         </div>
         <div class="admin-field">
-          <label>Venmo Handle</label>
+          <label><i class="bi bi-phone" style="color:#008CFF;"></i> Venmo Handle</label>
           <input type="text" id="admin-venmo" placeholder="@InnFromTheStorm">
         </div>
       </div>
 
-      <!-- Contact Tab -->
+      <!-- ==================== CONTACT TAB ==================== -->
       <div class="admin-section" id="tab-contact">
-        <div class="admin-field">
-          <label>Email Address</label>
-          <input type="email" id="admin-email" placeholder="info@innfromthestorm.org">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Update your contact information and social media links displayed on the website and footer.</span>
         </div>
         <div class="admin-field">
-          <label>Phone Number</label>
-          <input type="tel" id="admin-phone" placeholder="(314) 555-0123">
+          <label><i class="bi bi-envelope-fill" style="color:var(--wine);"></i> Email Address</label>
+          <input type="email" id="admin-email" placeholder="nfromthestormlllc@gmail.com">
         </div>
         <div class="admin-field">
-          <label>Location</label>
-          <input type="text" id="admin-location" placeholder="St. Louis, Missouri">
+          <label><i class="bi bi-telephone-fill" style="color:var(--wine);"></i> Phone Number</label>
+          <input type="tel" id="admin-phone" placeholder="(314) 328-9INN (9466)">
         </div>
         <div class="admin-field">
-          <label>Facebook URL</label>
+          <label><i class="bi bi-geo-alt-fill" style="color:var(--wine);"></i> Location</label>
+          <input type="text" id="admin-location" placeholder="7584 Olive Blvd., Ste 202, University City, MO 63130">
+        </div>
+        <div class="admin-field">
+          <label><i class="bi bi-facebook" style="color:#1877F2;"></i> Facebook URL</label>
           <input type="url" id="admin-facebook" placeholder="https://facebook.com/...">
         </div>
         <div class="admin-field">
-          <label>Instagram URL</label>
+          <label><i class="bi bi-instagram" style="color:#E4405F;"></i> Instagram URL</label>
           <input type="url" id="admin-instagram" placeholder="https://instagram.com/...">
+        </div>
+        <div class="admin-field">
+          <label><i class="bi bi-twitter" style="color:#1DA1F2;"></i> Twitter/X URL</label>
+          <input type="url" id="admin-twitter" placeholder="https://twitter.com/...">
+        </div>
+        <div class="admin-field">
+          <label><i class="bi bi-envelope-at-fill" style="color:var(--wine);"></i> Form Submission Email</label>
+          <input type="email" id="admin-formEmail" placeholder="info@innfromthestorm.org">
+          <div class="admin-help">Referral form submissions get sent to this email address</div>
         </div>
       </div>
 
-
-      <!-- Statistics Tab -->
+      <!-- ==================== STATISTICS TAB ==================== -->
       <div class="admin-section" id="tab-statistics">
-        <p style="font-size:0.9rem;color:var(--warm-gray);margin-bottom:16px;">
-          <i class="bi bi-info-circle" style="color:var(--gold);"></i>
-          Edit the impact statistics displayed on the website. Data sourced from CDC, Missouri DOC, and Bureau of Justice Statistics.
-        </p>
-        
-        <h4 style="font-family:var(--font-display);color:var(--wine-deep);margin-bottom:16px;margin-top:24px;">
-          <i class="bi bi-bar-chart-fill" style="color:var(--gold);"></i> Impact Statistics
-        </h4>
-        
-        <div class="admin-stats-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Edit the impact statistics displayed on the website. These help visitors understand the need for your services.</span>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-bar-chart-fill"></i> Impact Statistics</h4>
+        <div class="admin-grid-2">
           <div class="admin-field">
             <label>Stat 1 - Number</label>
             <input type="text" id="admin-stat1-num" placeholder="2x">
@@ -2831,10 +3516,7 @@ body {
           </div>
         </div>
 
-        <h4 style="font-family:var(--font-display);color:var(--wine-deep);margin-bottom:16px;margin-top:32px;">
-          <i class="bi bi-trophy-fill" style="color:var(--gold);"></i> Success Highlight
-        </h4>
-        
+        <h4 class="admin-section-header"><i class="bi bi-trophy-fill"></i> Success Highlight</h4>
         <div class="admin-field">
           <label>Success Number (e.g., "2" for "only lost 2")</label>
           <input type="text" id="admin-success-num" placeholder="2">
@@ -2844,41 +3526,147 @@ body {
           <textarea id="admin-success-desc" placeholder="While national recidivism rates remain stubbornly high..."></textarea>
         </div>
 
-        <h4 style="font-family:var(--font-display);color:var(--wine-deep);margin-bottom:16px;margin-top:32px;">
-          <i class="bi bi-database-fill" style="color:var(--gold);"></i> Data Sources
-        </h4>
-        
+        <h4 class="admin-section-header"><i class="bi bi-database-fill"></i> Data Sources</h4>
         <div class="admin-field">
           <label>Data Source Attribution</label>
           <input type="text" id="admin-data-source" placeholder="Data sourced from CDC reports, Missouri Department of Corrections, and Bureau of Justice Statistics">
         </div>
+      </div>
 
-        <div style="background:var(--cream);border-radius:12px;padding:16px;margin-top:24px;">
-          <p style="font-size:0.85rem;color:var(--warm-gray);margin:0;">
-            <i class="bi bi-lightbulb-fill" style="color:var(--gold);"></i>
-            <strong>Tip:</strong> The automation script in the <code>/automation</code> folder can fetch updated statistics from CDC, Missouri DOC, and BJS. Run <code>npm run collect</code> to update.
-          </p>
+      <!-- ==================== APPEARANCE TAB ==================== -->
+      <div class="admin-section" id="tab-appearance">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Customize the look and feel of your website. Changes are previewed instantly.</span>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-palette-fill"></i> Color Theme</h4>
+        <div class="admin-color-row">
+          <label>Primary Color</label>
+          <input type="color" id="admin-colorPrimary" value="#6B2D3E">
+          <span class="admin-help" style="margin:0;">Buttons, navbar, accents</span>
+        </div>
+        <div class="admin-color-row">
+          <label>Accent Color</label>
+          <input type="color" id="admin-colorAccent" value="#C8983C">
+          <span class="admin-help" style="margin:0;">Labels, highlights, gold accents</span>
+        </div>
+        <div class="admin-color-row">
+          <label>Secondary Color</label>
+          <input type="color" id="admin-colorSecondary" value="#2E6B3A">
+          <span class="admin-help" style="margin:0;">Hero button, green accents</span>
+        </div>
+        <div class="admin-color-row">
+          <label>Background Color</label>
+          <input type="color" id="admin-colorBg" value="#FFFDF9">
+          <span class="admin-help" style="margin:0;">Page background</span>
+        </div>
+
+        <div style="margin-top:16px;">
+          <button class="admin-btn admin-btn-secondary" id="resetColors"><i class="bi bi-arrow-counterclockwise"></i> Reset to Default Colors</button>
         </div>
       </div>
 
-      <!-- Settings Tab -->
+      <!-- ==================== AUTOMATION TAB ==================== -->
+      <div class="admin-section" id="tab-automation">
+        <div class="admin-info-box">
+          <i class="bi bi-robot"></i>
+          <span>Configure automation features that help manage your website with less effort.</span>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-calendar-check"></i> Event Automation</h4>
+        <div class="admin-toggle">
+          <label class="admin-toggle-switch">
+            <input type="checkbox" id="admin-autoHidePastEvents">
+            <span class="admin-toggle-slider"></span>
+          </label>
+          <div>
+            <div class="admin-toggle-label">Auto-Hide Past Events</div>
+            <div class="admin-toggle-desc">Events whose date has passed will automatically be hidden from the website</div>
+          </div>
+        </div>
+        <div class="admin-toggle">
+          <label class="admin-toggle-switch">
+            <input type="checkbox" id="admin-autoFlagPastEvents" checked>
+            <span class="admin-toggle-slider"></span>
+          </label>
+          <div>
+            <div class="admin-toggle-label">Flag Past Events</div>
+            <div class="admin-toggle-desc">Show a "Past Event" badge on events that have already occurred (if not auto-hidden)</div>
+          </div>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-floppy-fill"></i> Auto-Save</h4>
+        <div class="admin-toggle">
+          <label class="admin-toggle-switch">
+            <input type="checkbox" id="admin-autoSave" checked>
+            <span class="admin-toggle-slider"></span>
+          </label>
+          <div>
+            <div class="admin-toggle-label">Auto-Save Drafts</div>
+            <div class="admin-toggle-desc">Automatically save your changes as you type (every 3 seconds of inactivity)</div>
+          </div>
+        </div>
+        <div class="admin-toggle">
+          <label class="admin-toggle-switch">
+            <input type="checkbox" id="admin-livePreview" checked>
+            <span class="admin-toggle-slider"></span>
+          </label>
+          <div>
+            <div class="admin-toggle-label">Live Preview</div>
+            <div class="admin-toggle-desc">Show changes on the website in real-time as you type</div>
+          </div>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-shield-check"></i> Backup & Recovery</h4>
+        <div class="admin-toggle">
+          <label class="admin-toggle-switch">
+            <input type="checkbox" id="admin-autoBackup" checked>
+            <span class="admin-toggle-slider"></span>
+          </label>
+          <div>
+            <div class="admin-toggle-label">Auto-Backup Before Save</div>
+            <div class="admin-toggle-desc">Create a backup snapshot before every save so you can undo changes</div>
+          </div>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-c-circle-fill"></i> Footer Automation</h4>
+        <div class="admin-toggle">
+          <label class="admin-toggle-switch">
+            <input type="checkbox" id="admin-autoYear" checked>
+            <span class="admin-toggle-slider"></span>
+          </label>
+          <div>
+            <div class="admin-toggle-label">Auto-Update Copyright Year</div>
+            <div class="admin-toggle-desc">Automatically update the footer copyright year to the current year</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SETTINGS TAB ==================== -->
       <div class="admin-section" id="tab-settings">
+        <h4 class="admin-section-header"><i class="bi bi-lock-fill"></i> Security</h4>
         <div class="admin-field">
           <label>Change Admin Password</label>
-          <input type="password" id="admin-newPassword" placeholder="New password">
+          <input type="password" id="admin-newPassword" placeholder="New password (min 6 characters)">
         </div>
         <button class="admin-btn admin-btn-primary" id="changePasswordBtn" style="margin-bottom:24px;">Update Password</button>
-        <hr style="border:none;border-top:1px solid var(--cream-dark);margin:20px 0;">
-        <p style="font-size:0.9rem;color:var(--warm-gray);margin-bottom:12px;">Export your settings as a JSON file so you can import them on another device or after clearing browser data.</p>
+
+        <h4 class="admin-section-header"><i class="bi bi-arrow-left-right"></i> Import / Export</h4>
+        <p style="font-size:0.85rem;color:var(--warm-gray);margin-bottom:12px;">Export your settings as a JSON file so you can import them on another device or after clearing browser data.</p>
         <div class="admin-actions">
           <button class="admin-btn admin-btn-secondary" id="exportSettings"><i class="bi bi-download"></i> Export Settings</button>
           <label class="admin-btn admin-btn-secondary" style="cursor:pointer;"><i class="bi bi-upload"></i> Import Settings<input type="file" id="importSettings" accept=".json" style="display:none;"></label>
-          <button class="admin-btn admin-btn-danger" id="resetSettings"><i class="bi bi-trash3"></i> Reset All</button>
         </div>
+
+        <h4 class="admin-section-header" style="color:#dc3545;"><i class="bi bi-exclamation-triangle-fill" style="color:#dc3545;"></i> Danger Zone</h4>
+        <p style="font-size:0.85rem;color:var(--warm-gray);margin-bottom:12px;">Reset all customizations back to the website defaults. This cannot be undone.</p>
+        <button class="admin-btn admin-btn-danger" id="resetSettings"><i class="bi bi-trash3"></i> Reset All Settings</button>
       </div>
 
+      <!-- Bottom Save Bar -->
       <div class="admin-actions" style="border-top:1px solid var(--cream-dark);padding-top:20px;margin-top:24px;">
-        <button class="admin-btn admin-btn-primary" id="saveAdmin"><i class="bi bi-check-lg"></i> Save Changes</button>
+        <button class="admin-btn admin-btn-primary" id="saveAdmin"><i class="bi bi-check-lg"></i> Save & Close</button>
         <button class="admin-btn admin-btn-secondary" id="cancelAdmin">Cancel</button>
       </div>
     </div>
@@ -2938,12 +3726,12 @@ body {
   if (form) {
     let lastSubmit = 0;
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
       const now = Date.now();
       const msgEl = document.getElementById('formMessage');
 
       // Rate limiting: 30 seconds between submissions
       if (now - lastSubmit < 30000) {
+        e.preventDefault();
         msgEl.style.display = 'block';
         msgEl.style.background = '#fff3cd';
         msgEl.style.color = '#856404';
@@ -2951,8 +3739,9 @@ body {
         return;
       }
 
-      // Honeypot check
+      // Honeypot check - silently block bots
       if (document.getElementById('website_url').value) {
+        e.preventDefault();
         msgEl.style.display = 'block';
         msgEl.style.background = '#d4edda';
         msgEl.style.color = '#155724';
@@ -2960,25 +3749,18 @@ body {
         return;
       }
 
-      // Sanitize inputs
-      const sanitize = (str) => {
-        const div = document.createElement('div');
-        div.textContent = str;
-        return div.innerHTML;
-      };
-
       // Validate required fields
       if (!form.checkValidity()) {
+        e.preventDefault();
         form.reportValidity();
         return;
       }
 
+      // All checks passed — allow native POST to Formsubmit.co
       lastSubmit = now;
-      msgEl.style.display = 'block';
-      msgEl.style.background = '#d4edda';
-      msgEl.style.color = '#155724';
-      msgEl.textContent = 'Thank you! Your form has been submitted. We will be in touch soon.';
-      form.reset();
+      const submitBtn = form.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> &nbsp;Sending...';
     });
   }
 
@@ -3065,18 +3847,24 @@ body {
   // ===== ADMIN CMS =====
   const STORAGE_KEY = 'ifts_site_data';
   const PASS_KEY = 'ifts_admin_pass';
+  const BACKUP_KEY = 'ifts_site_backup';
+  const AUTO_KEY = 'ifts_automation';
   const DEFAULT_PASS = 'admin123';
 
   function getStoredData() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { return {}; }
   }
-
   function saveData(data) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   }
-
   function getPassword() {
     return localStorage.getItem(PASS_KEY) || DEFAULT_PASS;
+  }
+  function getAutoSettings() {
+    try { return JSON.parse(localStorage.getItem(AUTO_KEY)) || {}; } catch(e) { return {}; }
+  }
+  function saveAutoSettings(s) {
+    localStorage.setItem(AUTO_KEY, JSON.stringify(s));
   }
 
   // Show admin button if ?admin=true
@@ -3084,29 +3872,191 @@ body {
     document.getElementById('adminFab').classList.add('visible');
   }
 
-  // Apply saved data to the page
+  // ===== DEFAULT DATA =====
+  const DEFAULTS = {
+    orgName: 'Inn From the Storm',
+    heroBadge: 'Empowering Women Since Day One',
+    heroTitle: 'Every Woman Deserves a <em>Second Chapter</em>',
+    heroDesc: 'We provide free services, legal guidance, and unwavering community support to help formerly incarcerated women rebuild their lives with dignity and purpose.',
+    heroStat1Num: '98%', heroStat1Label: 'Success Rate',
+    heroStat2Num: 'Only 2', heroStat2Label: 'Lost to the System',
+    heroStat3Num: '100%', heroStat3Label: 'Free Services',
+    founderName: 'Sandi Colquitt',
+    founderTitle: 'Founder & CEO',
+    founderBio: "Sandi Colquitt is the Founder and CEO of Inn From the Storm, a community-driven nonprofit organization dedicated to assisting underserved women returning home from prison in the community. Sandi was raised in St. Louis, Missouri, attended elementary and high school in the area, and participated in community programs throughout the city. Her parents raised her and her siblings to understand that education was very important in life and taught them to be powerful in the community if they wanted to see change. Sandi is a highly experienced and elected government official with over 25 years of experience.\n\nSandi obtained her undergraduate degree in Business Administration from Fontbonne University and completed her Master of Health and Public Administration from Webster University. In addition to operating Inn From The Storm, she also works as an Organizational Effectiveness Officer for one of the largest employers in the State of Missouri. She is an active participant in multiple community service organizations, holds a State and Local political office, and is a member of professional organizations throughout the St. Louis Metropolitan Area.\n\nAfter years of working with males and females returning home from prison infected and affected with HIV/AIDS, caring for ailing family members, and having the goal of launching a nonprofit organization benefiting her community, Inn From The Storm was founded in 2016. In September 2016, the organization became a fully formed 501(c)(3) with great support from her community, children, and friends. Sandi has a heart for seeing women thrive and is blessed to be a part of Inn From the Storm.",
+    announcementEnabled: true,
+    announcementIcon: 'bi-calendar-event',
+    announcementText: 'Multiple events coming up this season!',
+    announcementLink: 'View Schedule \u2192',
+    announcementHref: '#events',
+    aboutTitle: 'Walking Alongside Women into Freedom',
+    aboutP1: "Inn From the Storm is a faith-based nonprofit organization committed to empowering previously incarcerated women returning home through education, employment, and supportive services. Founded in 2016 as a fully formed 501(c)(3), we serve as a bridge between the system and a better future \u2014 providing the tools, connections, and community that make lasting change possible.",
+    aboutP2: "Our focus on African American women reflects the disproportionate impact the justice system has on our community. We offer a 3\u20136 month transitional discharge plan that begins prior to release, followed by creative Transitional Case Management Service Plans based on comprehensive individual assessments \u2014 rewriting the narrative one woman at a time.",
+    aboutQuote: "Come Inn From The Storm and leave with a Blessing.",
+    aboutQuoteAuthor: 'Sandi Colquitt, Founder & CEO',
+    videoUrl: 'https://www.youtube.com/embed/I1_18csbZUE?rel=0&modestbranding=1',
+    videoTitle: 'See the Impact',
+    videoDesc: "Learn more about Inn From the Storm and the lives we're changing.",
+    cashapp: '@InnFromTheStorm',
+    paypal: 'donate@innfromthestorm.org',
+    venmo: '@InnFromTheStorm',
+    email: 'nfromthestormlllc@gmail.com',
+    phone: '(314) 328-9INN (9466)',
+    location: '7584 Olive Blvd., Ste 202, University City, MO 63130',
+    facebook: '', instagram: '', twitter: '', formEmail: '',
+    boardMembers: [
+      {name:'Derrick Colquitt',role:'Director'},{name:'Aja Brown',role:'Director'},
+      {name:'Delores Grady',role:'Director'},{name:'Cina Winfrey',role:'Director'},
+      {name:'Denise Smith',role:'Director'},{name:'Andre Cofer',role:'Director'},
+      {name:'Atty. Danelle Carter',role:'Director'},{name:'Atty. Thomas Applewhite',role:'Honorary Board Member'}
+    ],
+    events: [
+      {day:'15',month:'March 2026',weekday:'Saturday',title:'Annual Homecoming Celebration',description:"Join us to celebrate our program graduates and honor the women who've transformed their lives. Food, music, and community.",time:'11:00 AM - 4:00 PM',location:'Community Center, St. Louis MO',tickets:'Free & Open to All',image:''},
+      {day:'05',month:'April 2026',weekday:'Sunday',title:'Know Your Rights Workshop',description:'A free legal workshop for returning citizens. Learn about expungement, housing rights, and navigating the court system.',time:'1:00 PM - 3:00 PM',location:'Inn From the Storm Office',tickets:'RSVP Required',image:''},
+      {day:'20',month:'April 2026',weekday:'Monday',title:'Fundraiser Gala Dinner',description:'An evening of hope and generosity. Hear directly from our women, enjoy dinner, and help us raise funds for expanded services.',time:'6:00 PM - 9:00 PM',location:'Venue TBA',tickets:'Tickets Available Soon',image:''}
+    ],
+    stories: [
+      {type:'Interview',icon:'bi-quote',title:'"I Found My Voice Again"',text:"After 8 years behind bars, coming home felt impossible. Inn From the Storm didn't just help me find a job \u2014 they helped me find myself. The Hand in Hand program connected me with a mentor who truly understood.",author:'Tanya M.',role:'Program Participant, 2023'},
+      {type:'Success Story',icon:'bi-star-fill',title:'"From GED to College Degree"',text:"I earned my GED through the program and now I'm pursuing my associate's degree. Inn From the Storm showed me that my past doesn't define my future. They walked with me every step of the way.",author:'Keisha L.',role:'GED Graduate, Now Enrolled in College'},
+      {type:'Interview',icon:'bi-heart-fill',title:'"My Kids Have Their Mom Back"',text:"The hardest part wasn't prison \u2014 it was coming home and feeling like a stranger in my own family. Inn From the Storm helped me with legal guidance, counseling, and most importantly, the strength to keep going.",author:'Denise R.',role:'Program Participant, 2024'}
+    ],
+    services: [
+      {icon:'bi-bank2',title:'Legal Assistance',desc:'Connection to attorneys, court navigation support, and guidance through every stage of the legal process. We help you understand your rights and options.',tag:'Attorney Referrals'},
+      {icon:'bi-mortarboard-fill',title:'Educational Training',desc:'Educational training assisting with obtaining your GED, plus vocational training and educational resources that open doors to new careers and possibilities.',tag:'GED Programs'},
+      {icon:'bi-heart-pulse-fill',title:'Health & Wellness',desc:'Health assessments, mental health counseling, HIV/AIDS resources, substance abuse counseling, and connection to healthcare providers.',tag:'Health Assessment'},
+      {icon:'bi-house-fill',title:'Housing Support',desc:'Assistance finding safe, stable housing \u2014 because having a place to call home is the foundation for everything else.',tag:'Transitional Housing'},
+      {icon:'bi-briefcase-fill',title:'Employment Services',desc:'Employment services, vocational training, job placement, resume building, interview preparation, and partnerships with employers who believe in second chances.',tag:'Job Placement'},
+      {icon:'bi-people-fill',title:'Hand in Hand Mentorship',desc:"Our signature peer mentorship program connects women who've successfully reintegrated with those just beginning their journey home.",tag:'Peer Support'},
+      {icon:'bi-chat-heart-fill',title:'In-House Therapy',desc:'Our in-house therapist provides each returning citizen a personalized care plan. Guidance and direction are a top priority — a motivated person will receive the help they need.',tag:'Mental Health'},
+      {icon:'bi-calendar-event-fill',title:'Activities & Enrichment',desc:'Our Transitional Managers coordinate a wide variety of activities: Job Fairs, Health Fairs, Dress for Success, Family Night, Neighborhood Parties, Grooming, Job Readiness Training, and Job Shadowing.',tag:'Community Activities'},
+      {icon:'bi-bus-front-fill',title:'Transportation & Community Service',desc:'Transportation services to help you get where you need to go, plus community service opportunities that build connections and give back to the neighborhoods that welcome you home.',tag:'Transportation'}
+    ],
+    gallery: [
+      {image:'images/golf-trio.jpg',label:'Golf Tournament 2025'},
+      {image:'images/trophy-winner.jpg',label:'Longest Putt Winner'},
+      {image:'images/golf-foursome.jpg',label:'Tournament Participants'},
+      {image:'images/ifts-booth.jpg',label:'IFTS Community Booth'},
+      {image:'images/vendor-cigars.jpg',label:'Tournament Vendors'},
+      {image:'images/sponsors-board.jpg',label:'Our Sponsors'}
+    ],
+    stat1Num:'2x', stat1Desc:'African American women are incarcerated at twice the rate of white women nationally',
+    stat2Num:'60%', stat2Desc:'Of women returning face housing instability within their first year of release',
+    stat3Num:'5x', stat3Desc:'Incarcerated women face higher HIV/AIDS rates than the general population',
+    stat4Num:'44%', stat4Desc:'National recidivism rate for women returning to prison within 5 years',
+    successNum:'2', successDesc:"While national recidivism rates remain stubbornly high, Inn From the Storm's comprehensive approach \u2014 combining legal support, education, health services, and genuine community \u2014 is changing outcomes. Our Hand in Hand mentorship model proves that with the right support, women don't go back.",
+    dataSource:'Data sourced from CDC reports, Missouri Department of Corrections, and Bureau of Justice Statistics',
+    colorPrimary:'#6B2D3E', colorAccent:'#C8983C', colorSecondary:'#2E6B3A', colorBg:'#FFFDF9'
+  };
+
+  function val(data, key) { return data[key] !== undefined && data[key] !== '' ? data[key] : DEFAULTS[key]; }
+
+  // ===== PARSE EVENT DATE HELPER =====
+  function parseEventDate(ev) {
+    try {
+      var str = (ev.month || '') + ' ' + (ev.day || '1');
+      var d = new Date(str);
+      if (isNaN(d.getTime())) return null;
+      return d;
+    } catch(e) { return null; }
+  }
+  function isEventPast(ev) {
+    var d = parseEventDate(ev);
+    if (!d) return false;
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    return d < today;
+  }
+
+  // ===== APPLY SITE DATA =====
   function applySiteData() {
     const data = getStoredData();
-    if (data.orgName) {
-      document.querySelectorAll('.logo-text').forEach(el => el.textContent = data.orgName);
-      document.title = data.orgName + ' | Empowering Women After Incarceration';
+    const auto = getAutoSettings();
+
+    // Organization name
+    const orgName = val(data, 'orgName');
+    document.querySelectorAll('.logo-text').forEach(el => el.textContent = orgName);
+    document.title = orgName + ' | Empowering Women After Incarceration';
+
+    // Hero
+    const h1 = document.querySelector('.hero h1');
+    if (h1) h1.innerHTML = val(data, 'heroTitle');
+    const desc = document.querySelector('.hero-description');
+    if (desc) desc.textContent = val(data, 'heroDesc');
+    const badge = document.querySelector('.hero-badge');
+    if (badge) badge.innerHTML = '<i class="bi bi-star-fill"></i> ' + escapeHtml(val(data, 'heroBadge'));
+
+    // Hero stats
+    const heroStats = document.querySelectorAll('.hero-stats > div');
+    if (heroStats[0]) {
+      heroStats[0].querySelector('.hero-stat-number').textContent = val(data, 'heroStat1Num');
+      heroStats[0].querySelector('.hero-stat-label').textContent = val(data, 'heroStat1Label');
     }
-    if (data.heroTitle) {
-      const h1 = document.querySelector('.hero h1');
-      if (h1) h1.innerHTML = data.heroTitle;
+    if (heroStats[1]) {
+      heroStats[1].querySelector('.hero-stat-number').textContent = val(data, 'heroStat2Num');
+      heroStats[1].querySelector('.hero-stat-label').textContent = val(data, 'heroStat2Label');
     }
-    if (data.heroDesc) {
-      const desc = document.querySelector('.hero-description');
-      if (desc) desc.textContent = data.heroDesc;
+    if (heroStats[2]) {
+      heroStats[2].querySelector('.hero-stat-number').textContent = val(data, 'heroStat3Num');
+      heroStats[2].querySelector('.hero-stat-label').textContent = val(data, 'heroStat3Label');
     }
-    if (data.founderName) {
-      const el = document.querySelector('.team-featured-info h3');
-      if (el) el.textContent = data.founderName;
+
+    // Founder
+    const founderH3 = document.querySelector('.team-featured-info h3');
+    if (founderH3) founderH3.textContent = val(data, 'founderName');
+    const founderRole = document.querySelector('.team-featured-role');
+    if (founderRole) founderRole.innerHTML = escapeHtml(val(data, 'founderTitle'));
+    const founderInfo = document.querySelector('.team-featured-info');
+    if (founderInfo) {
+      const existingPs = founderInfo.querySelectorAll('p');
+      existingPs.forEach(p => p.remove());
+      const bioText = val(data, 'founderBio');
+      const paragraphs = bioText.split('\n\n').filter(s => s.trim());
+      paragraphs.forEach(para => {
+        const p = document.createElement('p');
+        p.textContent = para.trim();
+        founderInfo.appendChild(p);
+      });
     }
-    if (data.founderBio) {
-      const el = document.querySelector('.team-featured-info p');
-      if (el) el.textContent = data.founderBio;
+
+    // Announcement bar
+    const annBar = document.querySelector('.announcement-bar');
+    if (annBar) {
+      const annEnabled = data.announcementEnabled !== undefined ? data.announcementEnabled : true;
+      annBar.style.display = annEnabled ? '' : 'none';
+      if (annEnabled) {
+        const icon = val(data, 'announcementIcon');
+        const txt = val(data, 'announcementText');
+        const link = val(data, 'announcementLink');
+        const href = val(data, 'announcementHref');
+        annBar.innerHTML = '<i class="bi ' + escapeHtml(icon) + '"></i> ' + escapeHtml(txt) + ' <a href="' + escapeHtml(href) + '">' + escapeHtml(link) + '</a>';
+      }
     }
+
+    // About section
+    const aboutTitleEl = document.querySelector('.about-text .section-title');
+    if (aboutTitleEl && data.aboutTitle) aboutTitleEl.textContent = data.aboutTitle;
+    const aboutPs = document.querySelectorAll('.about-text > p');
+    if (aboutPs[0] && data.aboutP1) aboutPs[0].textContent = data.aboutP1;
+    if (aboutPs[1] && data.aboutP2) aboutPs[1].textContent = data.aboutP2;
+    const quoteP = document.querySelector('.about-quote p');
+    if (quoteP && data.aboutQuote) quoteP.textContent = '"' + data.aboutQuote + '"';
+    const quoteCite = document.querySelector('.about-quote cite');
+    if (quoteCite && data.aboutQuoteAuthor) quoteCite.textContent = '\u2014 ' + data.aboutQuoteAuthor;
+
+    // Video
+    if (data.videoUrl) {
+      const iframe = document.querySelector('iframe[title="Inn From the Storm Video"]');
+      if (iframe) iframe.src = data.videoUrl;
+    }
+    const vidSection = document.querySelector('.section-pad:has(iframe)');
+    if (vidSection) {
+      const vt = vidSection.querySelector('.section-title');
+      const vs = vidSection.querySelector('.section-subtitle');
+      if (vt && data.videoTitle) vt.textContent = data.videoTitle;
+      if (vs && data.videoDesc) vs.textContent = data.videoDesc;
+    }
+
+    // Contact info
     if (data.email && emailEl) {
       const parts = data.email.split('@');
       emailEl.dataset.user = parts[0] || '';
@@ -3124,114 +4074,204 @@ body {
         if (el) el.textContent = data.location;
       }
     }
-    // Board members
-    if (data.boardMembers !== undefined) {
-      const carousel = document.getElementById('boardCarousel');
-      if (carousel) {
-        carousel.innerHTML = '';
-        if (data.boardMembers.length === 0) {
-          carousel.innerHTML = '<p style="color:var(--warm-gray);padding:40px 20px;text-align:center;width:100%;">No board members added yet.</p>';
-        } else {
-          data.boardMembers.forEach(m => {
-            const card = document.createElement('div');
-            card.className = 'board-card';
-            const initials = (m.name || 'M').split(' ').map(w => w[0]).join('').toUpperCase();
-            card.innerHTML = '<div class="board-avatar">' + initials + '</div><h4>' + escapeHtml(m.name || 'Board Member') + '</h4><p>' + escapeHtml(m.role || 'Director') + '</p>';
-            carousel.appendChild(card);
-          });
-        }
-        currentSlide = 0;
-        updateCarousel();
-      }
+
+    // Form email
+    if (data.formEmail) {
+      const form = document.getElementById('referralForm');
+      if (form) form.action = 'https://formsubmit.co/' + encodeURIComponent(data.formEmail);
     }
+
+    // Board members
+    const bm = data.boardMembers !== undefined ? data.boardMembers : DEFAULTS.boardMembers;
+    const carousel = document.getElementById('boardCarousel');
+    if (carousel) {
+      carousel.innerHTML = '';
+      if (bm.length === 0) {
+        carousel.innerHTML = '<p style="color:var(--warm-gray);padding:40px 20px;text-align:center;width:100%;">No board members added yet.</p>';
+      } else {
+        bm.forEach(m => {
+          const card = document.createElement('div');
+          card.className = 'board-card';
+          const initials = (m.name || 'M').split(' ').map(w => w[0]).join('').toUpperCase();
+          card.innerHTML = '<div class="board-avatar">' + initials + '</div><h4>' + escapeHtml(m.name || 'Board Member') + '</h4><p>' + escapeHtml(m.role || 'Director') + '</p>';
+          carousel.appendChild(card);
+        });
+      }
+      currentSlide = 0;
+      updateCarousel();
+    }
+
     // Donation handles
     const handles = document.querySelectorAll('.payment-handle');
-    if (data.cashapp && handles[0]) handles[0].textContent = data.cashapp;
-    if (data.paypal && handles[1]) handles[1].textContent = data.paypal;
-    if (data.venmo && handles[2]) handles[2].textContent = data.venmo;
+    if (handles[0]) handles[0].textContent = val(data, 'cashapp');
+    if (handles[1]) handles[1].textContent = val(data, 'paypal');
+    if (handles[2]) handles[2].textContent = val(data, 'venmo');
+
     // Events
-    if (data.events !== undefined) {
-      const evGrid = document.getElementById('eventsGrid');
-      if (evGrid) {
-        evGrid.innerHTML = '';
-        if (data.events.length === 0) {
-          evGrid.innerHTML = '<p class="text-center" style="grid-column:1/-1;color:var(--warm-gray);padding:40px 0;">No upcoming events. Check back soon!</p>';
-        } else {
-          const barColors = ['var(--wine)', 'var(--gold)', 'var(--sage)'];
-          data.events.forEach((ev, idx) => {
-            const card = document.createElement('div');
-            card.className = 'event-card reveal visible';
-            card.innerHTML =
-              '<div class="event-date-bar" style="background:' + barColors[idx % 3] + ';">' +
-                '<span class="event-date-num">' + escapeHtml(ev.day || '') + '</span>' +
-                '<div class="event-date-info">' +
-                  '<span class="event-date-month">' + escapeHtml(ev.month || '') + '</span>' +
-                  '<span>' + escapeHtml(ev.weekday || '') + '</span>' +
-                '</div>' +
-              '</div>' +
-              '<div class="event-body">' +
-                '<h3>' + escapeHtml(ev.title || '') + '</h3>' +
-                '<p>' + escapeHtml(ev.description || '') + '</p>' +
-                '<div class="event-details">' +
-                  '<span class="event-detail"><i class="bi bi-clock"></i> ' + escapeHtml(ev.time || '') + '</span>' +
-                  '<span class="event-detail"><i class="bi bi-geo-alt-fill"></i> ' + escapeHtml(ev.location || '') + '</span>' +
-                  '<span class="event-detail"><i class="bi bi-ticket-perforated"></i> ' + escapeHtml(ev.tickets || '') + '</span>' +
-                '</div>' +
-              '</div>';
-            evGrid.appendChild(card);
-          });
-        }
+    const evts = data.events !== undefined ? data.events : DEFAULTS.events;
+    const evGrid = document.getElementById('eventsGrid');
+    if (evGrid) {
+      evGrid.innerHTML = '';
+      const autoHide = auto.autoHidePastEvents || false;
+      const autoFlag = auto.autoFlagPastEvents !== false;
+      const barColors = ['var(--wine)', 'var(--green)', 'var(--gold)'];
+      let visibleCount = 0;
+      evts.forEach((ev, idx) => {
+        const past = isEventPast(ev);
+        if (past && autoHide) return;
+        visibleCount++;
+        const card = document.createElement('div');
+        card.className = 'event-card reveal visible';
+        if (past) card.style.opacity = '0.7';
+        const imgHtml = ev.image ? '<div style="width:100%;height:180px;background:url(\'' + escapeHtml(ev.image) + '\') center/cover no-repeat;"></div>' : '';
+        const pastBadge = (past && autoFlag) ? '<span style="display:inline-block;background:#f8d7da;color:#842029;padding:2px 10px;border-radius:20px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Past Event</span>' : '';
+        card.innerHTML =
+          imgHtml +
+          '<div class="event-date-bar" style="background:' + barColors[idx % 3] + ';">' +
+            '<span class="event-date-num">' + escapeHtml(ev.day || '') + '</span>' +
+            '<div class="event-date-info">' +
+              '<span class="event-date-month">' + escapeHtml(ev.month || '') + '</span>' +
+              '<span>' + escapeHtml(ev.weekday || '') + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="event-body">' +
+            pastBadge +
+            '<h3>' + escapeHtml(ev.title || '') + '</h3>' +
+            '<p>' + escapeHtml(ev.description || '') + '</p>' +
+            '<div class="event-details">' +
+              '<span class="event-detail"><i class="bi bi-clock"></i> ' + escapeHtml(ev.time || '') + '</span>' +
+              '<span class="event-detail"><i class="bi bi-geo-alt-fill"></i> ' + escapeHtml(ev.location || '') + '</span>' +
+              '<span class="event-detail"><i class="bi bi-ticket-perforated"></i> ' + escapeHtml(ev.tickets || '') + '</span>' +
+            '</div>' +
+          '</div>';
+        evGrid.appendChild(card);
+      });
+      if (visibleCount === 0) {
+        evGrid.innerHTML = '<p class="text-center" style="grid-column:1/-1;color:var(--warm-gray);padding:40px 0;">No upcoming events. Check back soon!</p>';
       }
     }
+
+    // Stories
+    const stories = data.stories !== undefined ? data.stories : DEFAULTS.stories;
+    const storiesGrid = document.querySelector('.stories-grid');
+    if (storiesGrid) {
+      storiesGrid.innerHTML = '';
+      const storyColors = ['story-1', 'story-2', 'story-3'];
+      stories.forEach((s, idx) => {
+        const card = document.createElement('div');
+        card.className = 'story-card ' + storyColors[idx % 3] + ' reveal visible';
+        const initial = (s.author || 'A').charAt(0).toUpperCase();
+        card.innerHTML =
+          '<div class="story-visual">' +
+            '<span class="story-type">' + escapeHtml(s.type || 'Story') + '</span>' +
+            '<i class="bi ' + escapeHtml(s.icon || 'bi-quote') + ' story-visual-icon"></i>' +
+          '</div>' +
+          '<div class="story-content">' +
+            '<h3>' + escapeHtml(s.title || '') + '</h3>' +
+            '<p>' + escapeHtml(s.text || '') + '</p>' +
+            '<div class="story-meta">' +
+              '<div class="story-avatar">' + initial + '</div>' +
+              '<div>' +
+                '<div class="story-author">' + escapeHtml(s.author || '') + '</div>' +
+                '<div class="story-role">' + escapeHtml(s.role || '') + '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        storiesGrid.appendChild(card);
+      });
+    }
+
+    // Services
+    const svcs = data.services !== undefined ? data.services : DEFAULTS.services;
+    const svcGrid = document.querySelector('.services-grid');
+    if (svcGrid) {
+      svcGrid.innerHTML = '';
+      svcs.forEach((s, idx) => {
+        const card = document.createElement('div');
+        const delays = ['', ' reveal-delay-1', ' reveal-delay-2'];
+        card.className = 'service-card reveal visible' + delays[idx % 3];
+        card.innerHTML =
+          '<div class="service-icon"><i class="bi ' + escapeHtml(s.icon || 'bi-gear') + '"></i></div>' +
+          '<h3>' + escapeHtml(s.title || '') + '</h3>' +
+          '<p>' + escapeHtml(s.desc || '') + '</p>' +
+          '<span class="service-tag">' + escapeHtml(s.tag || '') + '</span>';
+        svcGrid.appendChild(card);
+      });
+    }
+
+    // Gallery
+    const gal = data.gallery !== undefined ? data.gallery : DEFAULTS.gallery;
+    const galGrid = document.querySelector('.gallery-grid');
+    if (galGrid) {
+      galGrid.innerHTML = '';
+      gal.forEach(g => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.style.background = "url('" + escapeHtml(g.image || '') + "') center/cover no-repeat";
+        item.innerHTML = '<span class="gallery-label">' + escapeHtml(g.label || '') + '</span>';
+        galGrid.appendChild(item);
+      });
+    }
+
     // Statistics
-    if (data.stat1Num) {
-      const el = document.getElementById('impact-stat1-num');
-      if (el) el.textContent = data.stat1Num;
-    }
-    if (data.stat1Desc) {
-      const el = document.getElementById('impact-stat1-desc');
-      if (el) el.textContent = data.stat1Desc;
-    }
-    if (data.stat2Num) {
-      const el = document.getElementById('impact-stat2-num');
-      if (el) el.textContent = data.stat2Num;
-    }
-    if (data.stat2Desc) {
-      const el = document.getElementById('impact-stat2-desc');
-      if (el) el.textContent = data.stat2Desc;
-    }
-    if (data.stat3Num) {
-      const el = document.getElementById('impact-stat3-num');
-      if (el) el.textContent = data.stat3Num;
-    }
-    if (data.stat3Desc) {
-      const el = document.getElementById('impact-stat3-desc');
-      if (el) el.textContent = data.stat3Desc;
-    }
-    if (data.stat4Num) {
-      const el = document.getElementById('impact-stat4-num');
-      if (el) el.textContent = data.stat4Num;
-    }
-    if (data.stat4Desc) {
-      const el = document.getElementById('impact-stat4-desc');
-      if (el) el.textContent = data.stat4Desc;
-    }
-    if (data.successNum) {
-      const el = document.getElementById('impact-success-num');
-      if (el) el.textContent = data.successNum;
-    }
-    if (data.successDesc) {
-      const el = document.getElementById('impact-success-desc');
-      if (el) el.textContent = data.successDesc;
-    }
-    if (data.dataSource) {
-      const el = document.getElementById('impact-data-source');
-      if (el) el.textContent = data.dataSource;
-    }
+    const statFields = ['stat1Num','stat1Desc','stat2Num','stat2Desc','stat3Num','stat3Desc','stat4Num','stat4Desc','successNum','successDesc','dataSource'];
+    const statEls = {
+      stat1Num:'impact-stat1-num', stat1Desc:'impact-stat1-desc',
+      stat2Num:'impact-stat2-num', stat2Desc:'impact-stat2-desc',
+      stat3Num:'impact-stat3-num', stat3Desc:'impact-stat3-desc',
+      stat4Num:'impact-stat4-num', stat4Desc:'impact-stat4-desc',
+      successNum:'impact-success-num', successDesc:'impact-success-desc',
+      dataSource:'impact-data-source'
+    };
+    statFields.forEach(key => {
+      const el = document.getElementById(statEls[key]);
+      if (el) el.textContent = val(data, key);
+    });
+
     // Social links
     const socialLinks = document.querySelectorAll('.social-link');
     if (data.facebook) socialLinks.forEach(a => { if (a.title === 'Facebook') a.href = data.facebook; });
     if (data.instagram) socialLinks.forEach(a => { if (a.title === 'Instagram') a.href = data.instagram; });
+    if (data.twitter) socialLinks.forEach(a => { if (a.title === 'Twitter') a.href = data.twitter; });
+
+    // Colors / Appearance
+    if (data.colorPrimary) {
+      document.documentElement.style.setProperty('--wine', data.colorPrimary);
+      // Derive darker shade
+      document.documentElement.style.setProperty('--wine-deep', darkenColor(data.colorPrimary, 30));
+    }
+    if (data.colorAccent) {
+      document.documentElement.style.setProperty('--gold', data.colorAccent);
+      document.documentElement.style.setProperty('--gold-light', lightenColor(data.colorAccent, 40));
+    }
+    if (data.colorSecondary) {
+      document.documentElement.style.setProperty('--green', data.colorSecondary);
+      document.documentElement.style.setProperty('--sage', data.colorSecondary);
+      document.documentElement.style.setProperty('--green-light', lightenColor(data.colorSecondary, 20));
+    }
+    if (data.colorBg) {
+      document.documentElement.style.setProperty('--soft-white', data.colorBg);
+    }
+
+    // Auto-update copyright year
+    if (auto.autoYear !== false) {
+      const footerBottom = document.querySelector('.footer-bottom p');
+      if (footerBottom) {
+        footerBottom.textContent = footerBottom.textContent.replace(/\u00a9\s*\d{4}/, '\u00a9 ' + new Date().getFullYear());
+      }
+    }
+  }
+
+  // Color helpers
+  function darkenColor(hex, amount) {
+    var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    r = Math.max(0, r - amount); g = Math.max(0, g - amount); b = Math.max(0, b - amount);
+    return '#' + [r,g,b].map(x => x.toString(16).padStart(2,'0')).join('');
+  }
+  function lightenColor(hex, amount) {
+    var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    r = Math.min(255, r + amount); g = Math.min(255, g + amount); b = Math.min(255, b + amount);
+    return '#' + [r,g,b].map(x => x.toString(16).padStart(2,'0')).join('');
   }
 
   function escapeHtml(str) {
@@ -3240,7 +4280,7 @@ body {
     return div.innerHTML;
   }
 
-  // Admin Panel Logic
+  // ===== ADMIN PANEL LOGIC =====
   const adminFab = document.getElementById('adminFab');
   const adminOverlay = document.getElementById('adminOverlay');
   const adminClose = document.getElementById('adminClose');
@@ -3259,6 +4299,7 @@ body {
         document.getElementById('adminLogin').style.display = 'none';
         document.getElementById('adminContent').style.display = 'block';
         loadAdminData();
+        setupAutoSave();
       } else {
         document.getElementById('adminLoginError').style.display = 'block';
       }
@@ -3278,72 +4319,130 @@ body {
     });
   });
 
+  // ===== LOAD ADMIN DATA =====
   function loadAdminData() {
     const data = getStoredData();
-    document.getElementById('admin-orgName').value = data.orgName || 'Inn From the Storm';
-    document.getElementById('admin-heroTitle').value = data.heroTitle || 'Every Woman Deserves a <em>Second Chapter</em>';
-    document.getElementById('admin-heroDesc').value = data.heroDesc || '';
-    document.getElementById('admin-founderName').value = data.founderName || 'Sandi';
-    document.getElementById('admin-founderBio').value = data.founderBio || '';
-    document.getElementById('admin-cashapp').value = data.cashapp || '@InnFromTheStorm';
-    document.getElementById('admin-paypal').value = data.paypal || 'donate@innfromthestorm.org';
-    document.getElementById('admin-venmo').value = data.venmo || '@InnFromTheStorm';
-    document.getElementById('admin-email').value = data.email || 'info@innfromthestorm.org';
-    document.getElementById('admin-phone').value = data.phone || '(314) 555-0123';
-    document.getElementById('admin-location').value = data.location || 'St. Louis, Missouri';
+    const auto = getAutoSettings();
+
+    // General tab
+    document.getElementById('admin-orgName').value = val(data, 'orgName');
+    document.getElementById('admin-heroBadge').value = val(data, 'heroBadge');
+    document.getElementById('admin-heroTitle').value = val(data, 'heroTitle');
+    document.getElementById('admin-heroDesc').value = val(data, 'heroDesc');
+    document.getElementById('admin-heroStat1Num').value = val(data, 'heroStat1Num');
+    document.getElementById('admin-heroStat1Label').value = val(data, 'heroStat1Label');
+    document.getElementById('admin-heroStat2Num').value = val(data, 'heroStat2Num');
+    document.getElementById('admin-heroStat2Label').value = val(data, 'heroStat2Label');
+    document.getElementById('admin-heroStat3Num').value = val(data, 'heroStat3Num');
+    document.getElementById('admin-heroStat3Label').value = val(data, 'heroStat3Label');
+    document.getElementById('admin-founderName').value = val(data, 'founderName');
+    document.getElementById('admin-founderTitle').value = val(data, 'founderTitle');
+    document.getElementById('admin-founderBio').value = val(data, 'founderBio');
+
+    // Announcement tab
+    document.getElementById('admin-announcementEnabled').checked = data.announcementEnabled !== undefined ? data.announcementEnabled : true;
+    document.getElementById('admin-announcementIcon').value = val(data, 'announcementIcon');
+    document.getElementById('admin-announcementText').value = val(data, 'announcementText');
+    document.getElementById('admin-announcementLink').value = val(data, 'announcementLink');
+    document.getElementById('admin-announcementHref').value = val(data, 'announcementHref');
+
+    // About tab
+    document.getElementById('admin-aboutTitle').value = val(data, 'aboutTitle');
+    document.getElementById('admin-aboutP1').value = val(data, 'aboutP1');
+    document.getElementById('admin-aboutP2').value = val(data, 'aboutP2');
+    document.getElementById('admin-aboutQuote').value = val(data, 'aboutQuote');
+    document.getElementById('admin-aboutQuoteAuthor').value = val(data, 'aboutQuoteAuthor');
+    document.getElementById('admin-videoUrl').value = val(data, 'videoUrl');
+    document.getElementById('admin-videoTitle').value = val(data, 'videoTitle');
+    document.getElementById('admin-videoDesc').value = val(data, 'videoDesc');
+
+    // Donations
+    document.getElementById('admin-cashapp').value = val(data, 'cashapp');
+    document.getElementById('admin-paypal').value = val(data, 'paypal');
+    document.getElementById('admin-venmo').value = val(data, 'venmo');
+
+    // Contact
+    document.getElementById('admin-email').value = val(data, 'email');
+    document.getElementById('admin-phone').value = val(data, 'phone');
+    document.getElementById('admin-location').value = val(data, 'location');
     document.getElementById('admin-facebook').value = data.facebook || '';
     document.getElementById('admin-instagram').value = data.instagram || '';
-    renderBoardAdmin(data.boardMembers || [{name:'Board Member 1',role:'Director'},{name:'Board Member 2',role:'Director'},{name:'Board Member 3',role:'Director'},{name:'Board Member 4',role:'Director'},{name:'Board Member 5',role:'Director'}]);
-    renderEventsAdmin(data.events || [
-      {day:'15',month:'March 2026',weekday:'Saturday',title:'Annual Homecoming Celebration',description:'Join us to celebrate our program graduates and honor the women who\'ve transformed their lives. Food, music, and community.',time:'11:00 AM - 4:00 PM',location:'Community Center, St. Louis MO',tickets:'Free & Open to All'},
-      {day:'05',month:'April 2026',weekday:'Sunday',title:'Know Your Rights Workshop',description:'A free legal workshop for returning citizens. Learn about expungement, housing rights, and navigating the court system.',time:'1:00 PM - 3:00 PM',location:'Inn From the Storm Office',tickets:'RSVP Required'},
-      {day:'20',month:'April 2026',weekday:'Monday',title:'Fundraiser Gala Dinner',description:'An evening of hope and generosity. Hear directly from our women, enjoy dinner, and help us raise funds for expanded services.',time:'6:00 PM - 9:00 PM',location:'Venue TBA',tickets:'Tickets Available Soon'}
-    ]);
-    // Statistics
-    document.getElementById('admin-stat1-num').value = data.stat1Num || '2x';
-    document.getElementById('admin-stat1-desc').value = data.stat1Desc || 'African American women are incarcerated at twice the rate of white women nationally';
-    document.getElementById('admin-stat2-num').value = data.stat2Num || '60%';
-    document.getElementById('admin-stat2-desc').value = data.stat2Desc || 'Of women returning face housing instability within their first year of release';
-    document.getElementById('admin-stat3-num').value = data.stat3Num || '5x';
-    document.getElementById('admin-stat3-desc').value = data.stat3Desc || 'Incarcerated women face higher HIV/AIDS rates than the general population';
-    document.getElementById('admin-stat4-num').value = data.stat4Num || '44%';
-    document.getElementById('admin-stat4-desc').value = data.stat4Desc || 'National recidivism rate for women returning to prison within 5 years';
-    document.getElementById('admin-success-num').value = data.successNum || '2';
-    document.getElementById('admin-success-desc').value = data.successDesc || "While national recidivism rates remain stubbornly high, Inn From the Storm's comprehensive approach — combining legal support, education, health services, and genuine community — is changing outcomes. Our Hand in Hand mentorship model proves that with the right support, women don't go back.";
-    document.getElementById('admin-data-source').value = data.dataSource || 'Data sourced from CDC reports, Missouri Department of Corrections, and Bureau of Justice Statistics';
+    document.getElementById('admin-twitter').value = data.twitter || '';
+    document.getElementById('admin-formEmail').value = data.formEmail || '';
 
+    // Board
+    renderBoardAdmin(data.boardMembers !== undefined ? data.boardMembers : DEFAULTS.boardMembers);
+
+    // Events
+    renderEventsAdmin(data.events !== undefined ? data.events : DEFAULTS.events);
+
+    // Stories
+    renderStoriesAdmin(data.stories !== undefined ? data.stories : DEFAULTS.stories);
+
+    // Services
+    renderServicesAdmin(data.services !== undefined ? data.services : DEFAULTS.services);
+
+    // Gallery
+    renderGalleryAdmin(data.gallery !== undefined ? data.gallery : DEFAULTS.gallery);
+
+    // Statistics
+    document.getElementById('admin-stat1-num').value = val(data, 'stat1Num');
+    document.getElementById('admin-stat1-desc').value = val(data, 'stat1Desc');
+    document.getElementById('admin-stat2-num').value = val(data, 'stat2Num');
+    document.getElementById('admin-stat2-desc').value = val(data, 'stat2Desc');
+    document.getElementById('admin-stat3-num').value = val(data, 'stat3Num');
+    document.getElementById('admin-stat3-desc').value = val(data, 'stat3Desc');
+    document.getElementById('admin-stat4-num').value = val(data, 'stat4Num');
+    document.getElementById('admin-stat4-desc').value = val(data, 'stat4Desc');
+    document.getElementById('admin-success-num').value = val(data, 'successNum');
+    document.getElementById('admin-success-desc').value = val(data, 'successDesc');
+    document.getElementById('admin-data-source').value = val(data, 'dataSource');
+
+    // Appearance
+    document.getElementById('admin-colorPrimary').value = val(data, 'colorPrimary');
+    document.getElementById('admin-colorAccent').value = val(data, 'colorAccent');
+    document.getElementById('admin-colorSecondary').value = val(data, 'colorSecondary');
+    document.getElementById('admin-colorBg').value = val(data, 'colorBg');
+
+    // Automation settings
+    document.getElementById('admin-autoHidePastEvents').checked = auto.autoHidePastEvents || false;
+    document.getElementById('admin-autoFlagPastEvents').checked = auto.autoFlagPastEvents !== false;
+    document.getElementById('admin-autoSave').checked = auto.autoSave !== false;
+    document.getElementById('admin-livePreview').checked = auto.livePreview !== false;
+    document.getElementById('admin-autoBackup').checked = auto.autoBackup !== false;
+    document.getElementById('admin-autoYear').checked = auto.autoYear !== false;
   }
 
+  // ===== BOARD ADMIN =====
   function renderBoardAdmin(members) {
     const list = document.getElementById('adminBoardList');
     list.innerHTML = '';
     members.forEach((m, i) => {
       const div = document.createElement('div');
       div.className = 'admin-board-item';
-      div.innerHTML = '<button class="admin-remove" data-index="' + i + '"><i class="bi bi-x-circle"></i></button>' +
+      div.innerHTML = '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
+        '<div class="admin-grid-2">' +
         '<div class="admin-field"><label>Name</label><input type="text" class="board-name" value="' + escapeHtml(m.name || '') + '"></div>' +
-        '<div class="admin-field"><label>Title/Role</label><input type="text" class="board-role" value="' + escapeHtml(m.role || '') + '"></div>';
+        '<div class="admin-field"><label>Title/Role</label><input type="text" class="board-role" value="' + escapeHtml(m.role || '') + '"></div>' +
+        '</div>';
       list.appendChild(div);
-    });
-    list.querySelectorAll('.admin-remove').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.parentElement.remove();
-      });
+      div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
     });
   }
 
-  // Add board member
   const addBoardBtn = document.getElementById('addBoardMember');
   if (addBoardBtn) addBoardBtn.addEventListener('click', () => {
     const list = document.getElementById('adminBoardList');
     const div = document.createElement('div');
     div.className = 'admin-board-item';
-    const i = list.children.length;
-    div.innerHTML = '<button class="admin-remove" data-index="' + i + '"><i class="bi bi-x-circle"></i></button>' +
+    div.innerHTML = '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
+      '<div class="admin-grid-2">' +
       '<div class="admin-field"><label>Name</label><input type="text" class="board-name" value=""></div>' +
-      '<div class="admin-field"><label>Title/Role</label><input type="text" class="board-role" value=""></div>';
+      '<div class="admin-field"><label>Title/Role</label><input type="text" class="board-role" value=""></div>' +
+      '</div>';
     list.appendChild(div);
     div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+    div.querySelector('.board-name').focus();
   });
 
   // ===== EVENTS ADMIN =====
@@ -3351,55 +4450,158 @@ body {
     const list = document.getElementById('adminEventList');
     if (!list) return;
     list.innerHTML = '';
-    events.forEach((ev, i) => {
-      const div = document.createElement('div');
-      div.className = 'admin-event-item';
-      div.innerHTML =
-        '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
-        '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
-          '<div class="admin-field"><label>Day</label><input type="text" class="ev-day" value="' + escapeHtml(ev.day || '') + '" placeholder="15"></div>' +
-          '<div class="admin-field"><label>Month/Year</label><input type="text" class="ev-month" value="' + escapeHtml(ev.month || '') + '" placeholder="March 2026"></div>' +
-          '<div class="admin-field"><label>Weekday</label><input type="text" class="ev-weekday" value="' + escapeHtml(ev.weekday || '') + '" placeholder="Saturday"></div>' +
-        '</div>' +
-        '<div class="admin-field"><label>Event Title</label><input type="text" class="ev-title" value="' + escapeHtml(ev.title || '') + '" placeholder="Event Name"></div>' +
-        '<div class="admin-field"><label>Description</label><textarea class="ev-desc" placeholder="Event description...">' + escapeHtml(ev.description || '') + '</textarea></div>' +
-        '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
-          '<div class="admin-field"><label>Time</label><input type="text" class="ev-time" value="' + escapeHtml(ev.time || '') + '" placeholder="11:00 AM - 4:00 PM"></div>' +
-          '<div class="admin-field"><label>Location</label><input type="text" class="ev-location" value="' + escapeHtml(ev.location || '') + '" placeholder="Venue Name"></div>' +
-          '<div class="admin-field"><label>Tickets/Entry</label><input type="text" class="ev-tickets" value="' + escapeHtml(ev.tickets || '') + '" placeholder="Free & Open to All"></div>' +
-        '</div>';
-      list.appendChild(div);
-      div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+    events.forEach((ev) => {
+      addEventCard(list, ev);
     });
   }
 
-  // Add event
-  const addEventBtn = document.getElementById('addEvent');
-  if (addEventBtn) addEventBtn.addEventListener('click', () => {
-    const list = document.getElementById('adminEventList');
+  function addEventCard(list, ev) {
+    ev = ev || {};
     const div = document.createElement('div');
     div.className = 'admin-event-item';
+    const past = isEventPast(ev);
+    const badge = past ? ' <span class="admin-badge admin-badge-past">Past Event</span>' : (ev.title ? ' <span class="admin-badge admin-badge-upcoming">Upcoming</span>' : '');
     div.innerHTML =
       '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
-      '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
-        '<div class="admin-field"><label>Day</label><input type="text" class="ev-day" value="" placeholder="15"></div>' +
-        '<div class="admin-field"><label>Month/Year</label><input type="text" class="ev-month" value="" placeholder="March 2026"></div>' +
-        '<div class="admin-field"><label>Weekday</label><input type="text" class="ev-weekday" value="" placeholder="Saturday"></div>' +
+      '<div style="margin-bottom:8px;">' + badge + '</div>' +
+      '<div class="admin-grid-3">' +
+        '<div class="admin-field"><label>Day</label><input type="text" class="ev-day" value="' + escapeHtml(ev.day || '') + '" placeholder="15"></div>' +
+        '<div class="admin-field"><label>Month/Year</label><input type="text" class="ev-month" value="' + escapeHtml(ev.month || '') + '" placeholder="March 2026"></div>' +
+        '<div class="admin-field"><label>Weekday</label><input type="text" class="ev-weekday" value="' + escapeHtml(ev.weekday || '') + '" placeholder="Saturday"></div>' +
       '</div>' +
-      '<div class="admin-field"><label>Event Title</label><input type="text" class="ev-title" value="" placeholder="Event Name"></div>' +
-      '<div class="admin-field"><label>Description</label><textarea class="ev-desc" placeholder="Event description..."></textarea></div>' +
-      '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">' +
-        '<div class="admin-field"><label>Time</label><input type="text" class="ev-time" value="" placeholder="11:00 AM - 4:00 PM"></div>' +
-        '<div class="admin-field"><label>Location</label><input type="text" class="ev-location" value="" placeholder="Venue Name"></div>' +
-        '<div class="admin-field"><label>Tickets/Entry</label><input type="text" class="ev-tickets" value="" placeholder="Free & Open to All"></div>' +
+      '<div class="admin-field"><label>Event Title</label><input type="text" class="ev-title" value="' + escapeHtml(ev.title || '') + '" placeholder="Event Name"></div>' +
+      '<div class="admin-field"><label>Description</label><textarea class="ev-desc" placeholder="Event description...">' + escapeHtml(ev.description || '') + '</textarea></div>' +
+      '<div class="admin-grid-3">' +
+        '<div class="admin-field"><label>Time</label><input type="text" class="ev-time" value="' + escapeHtml(ev.time || '') + '" placeholder="11:00 AM - 4:00 PM"></div>' +
+        '<div class="admin-field"><label>Location</label><input type="text" class="ev-location" value="' + escapeHtml(ev.location || '') + '" placeholder="Venue Name"></div>' +
+        '<div class="admin-field"><label>Tickets/Entry</label><input type="text" class="ev-tickets" value="' + escapeHtml(ev.tickets || '') + '" placeholder="Free & Open to All"></div>' +
+      '</div>' +
+      '<div class="admin-field"><label><i class="bi bi-image"></i> Photo URL (optional)</label><input type="text" class="ev-image" value="' + escapeHtml(ev.image || '') + '" placeholder="images/photo.jpg or https://..."></div>';
+    list.appendChild(div);
+    div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+  }
+
+  const addEventBtn = document.getElementById('addEvent');
+  if (addEventBtn) addEventBtn.addEventListener('click', () => {
+    addEventCard(document.getElementById('adminEventList'), {});
+    document.getElementById('adminEventList').lastChild.querySelector('.ev-title').focus();
+  });
+
+  // ===== STORIES ADMIN =====
+  function renderStoriesAdmin(stories) {
+    const list = document.getElementById('adminStoryList');
+    if (!list) return;
+    list.innerHTML = '';
+    stories.forEach(s => addStoryCard(list, s));
+  }
+
+  function addStoryCard(list, s) {
+    s = s || {};
+    const div = document.createElement('div');
+    div.className = 'admin-story-item';
+    div.innerHTML =
+      '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
+      '<div class="admin-grid-2">' +
+        '<div class="admin-field"><label>Story Type</label>' +
+          '<select class="st-type" style="width:100%;padding:10px 14px;border:2px solid var(--cream-dark);border-radius:10px;font-family:var(--font-body);font-size:0.9rem;">' +
+            '<option value="Interview"' + (s.type === 'Interview' ? ' selected' : '') + '>Interview</option>' +
+            '<option value="Success Story"' + (s.type === 'Success Story' ? ' selected' : '') + '>Success Story</option>' +
+            '<option value="Testimonial"' + (s.type === 'Testimonial' ? ' selected' : '') + '>Testimonial</option>' +
+          '</select></div>' +
+        '<div class="admin-field"><label>Icon</label>' +
+          '<select class="st-icon" style="width:100%;padding:10px 14px;border:2px solid var(--cream-dark);border-radius:10px;font-family:var(--font-body);font-size:0.9rem;">' +
+            '<option value="bi-quote"' + (s.icon === 'bi-quote' ? ' selected' : '') + '>Quote</option>' +
+            '<option value="bi-star-fill"' + (s.icon === 'bi-star-fill' ? ' selected' : '') + '>Star</option>' +
+            '<option value="bi-heart-fill"' + (s.icon === 'bi-heart-fill' ? ' selected' : '') + '>Heart</option>' +
+            '<option value="bi-trophy-fill"' + (s.icon === 'bi-trophy-fill' ? ' selected' : '') + '>Trophy</option>' +
+          '</select></div>' +
+      '</div>' +
+      '<div class="admin-field"><label>Title (in quotes)</label><input type="text" class="st-title" value="' + escapeHtml(s.title || '') + '" placeholder="&quot;I Found My Voice Again&quot;"></div>' +
+      '<div class="admin-field"><label>Story Text</label><textarea class="st-text" placeholder="Their story...">' + escapeHtml(s.text || '') + '</textarea></div>' +
+      '<div class="admin-grid-2">' +
+        '<div class="admin-field"><label>Author Name</label><input type="text" class="st-author" value="' + escapeHtml(s.author || '') + '" placeholder="Tanya M."></div>' +
+        '<div class="admin-field"><label>Author Role/Year</label><input type="text" class="st-role" value="' + escapeHtml(s.role || '') + '" placeholder="Program Participant, 2023"></div>' +
       '</div>';
     list.appendChild(div);
     div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+  }
+
+  const addStoryBtn = document.getElementById('addStory');
+  if (addStoryBtn) addStoryBtn.addEventListener('click', () => {
+    addStoryCard(document.getElementById('adminStoryList'), {type:'Testimonial',icon:'bi-quote'});
+    document.getElementById('adminStoryList').lastChild.querySelector('.st-title').focus();
   });
 
-  // Save
-  const saveBtn = document.getElementById('saveAdmin');
-  if (saveBtn) saveBtn.addEventListener('click', () => {
+  // ===== SERVICES ADMIN =====
+  function renderServicesAdmin(services) {
+    const list = document.getElementById('adminServiceList');
+    if (!list) return;
+    list.innerHTML = '';
+    services.forEach(s => addServiceCard(list, s));
+  }
+
+  function addServiceCard(list, s) {
+    s = s || {};
+    const iconOptions = [
+      'bi-bank2','bi-mortarboard-fill','bi-heart-pulse-fill','bi-house-fill',
+      'bi-briefcase-fill','bi-people-fill','bi-shield-fill-check','bi-journal-text',
+      'bi-lightbulb-fill','bi-telephone-fill','bi-car-front-fill','bi-chat-heart-fill'
+    ];
+    let opts = '';
+    iconOptions.forEach(ic => {
+      opts += '<option value="' + ic + '"' + (s.icon === ic ? ' selected' : '') + '>' + ic.replace('bi-','').replace(/-/g,' ') + '</option>';
+    });
+    const div = document.createElement('div');
+    div.className = 'admin-service-item';
+    div.innerHTML =
+      '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
+      '<div class="admin-grid-2">' +
+        '<div class="admin-field"><label>Service Title</label><input type="text" class="svc-title" value="' + escapeHtml(s.title || '') + '" placeholder="Legal Assistance"></div>' +
+        '<div class="admin-field"><label>Icon</label><select class="svc-icon" style="width:100%;padding:10px 14px;border:2px solid var(--cream-dark);border-radius:10px;font-family:var(--font-body);font-size:0.9rem;">' + opts + '</select></div>' +
+      '</div>' +
+      '<div class="admin-field"><label>Description</label><textarea class="svc-desc" placeholder="What this service provides...">' + escapeHtml(s.desc || '') + '</textarea></div>' +
+      '<div class="admin-field"><label>Tag (short label)</label><input type="text" class="svc-tag" value="' + escapeHtml(s.tag || '') + '" placeholder="Attorney Referrals"></div>';
+    list.appendChild(div);
+    div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+  }
+
+  const addServiceBtn = document.getElementById('addService');
+  if (addServiceBtn) addServiceBtn.addEventListener('click', () => {
+    addServiceCard(document.getElementById('adminServiceList'), {icon:'bi-lightbulb-fill'});
+    document.getElementById('adminServiceList').lastChild.querySelector('.svc-title').focus();
+  });
+
+  // ===== GALLERY ADMIN =====
+  function renderGalleryAdmin(items) {
+    const list = document.getElementById('adminGalleryList');
+    if (!list) return;
+    list.innerHTML = '';
+    items.forEach(g => addGalleryCard(list, g));
+  }
+
+  function addGalleryCard(list, g) {
+    g = g || {};
+    const div = document.createElement('div');
+    div.className = 'admin-gallery-item';
+    div.innerHTML =
+      '<button class="admin-remove"><i class="bi bi-x-circle"></i></button>' +
+      '<div class="admin-grid-2">' +
+        '<div class="admin-field"><label><i class="bi bi-image"></i> Image URL</label><input type="text" class="gal-image" value="' + escapeHtml(g.image || '') + '" placeholder="images/photo.jpg or https://..."></div>' +
+        '<div class="admin-field"><label>Caption/Label</label><input type="text" class="gal-label" value="' + escapeHtml(g.label || '') + '" placeholder="Event Photo 2025"></div>' +
+      '</div>';
+    list.appendChild(div);
+    div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+  }
+
+  const addGalleryBtn = document.getElementById('addGalleryItem');
+  if (addGalleryBtn) addGalleryBtn.addEventListener('click', () => {
+    addGalleryCard(document.getElementById('adminGalleryList'), {});
+    document.getElementById('adminGalleryList').lastChild.querySelector('.gal-image').focus();
+  });
+
+  // ===== COLLECT ALL DATA FROM ADMIN FORM =====
+  function collectAdminData() {
+    // Board members
     const boardNames = document.querySelectorAll('#adminBoardList .board-name');
     const boardRoles = document.querySelectorAll('#adminBoardList .board-role');
     const members = [];
@@ -3407,7 +4609,7 @@ body {
       if (inp.value.trim()) members.push({ name: inp.value.trim(), role: boardRoles[i] ? boardRoles[i].value.trim() : 'Director' });
     });
 
-    // Collect events
+    // Events
     const eventItems = document.querySelectorAll('#adminEventList .admin-event-item');
     const events = [];
     eventItems.forEach(item => {
@@ -3421,17 +4623,84 @@ body {
           description: (item.querySelector('.ev-desc') || {}).value || '',
           time: (item.querySelector('.ev-time') || {}).value || '',
           location: (item.querySelector('.ev-location') || {}).value || '',
-          tickets: (item.querySelector('.ev-tickets') || {}).value || ''
+          tickets: (item.querySelector('.ev-tickets') || {}).value || '',
+          image: (item.querySelector('.ev-image') || {}).value || ''
         });
       }
     });
 
-    const data = {
+    // Stories
+    const storyItems = document.querySelectorAll('#adminStoryList .admin-story-item');
+    const stories = [];
+    storyItems.forEach(item => {
+      const title = item.querySelector('.st-title');
+      if (title && title.value.trim()) {
+        stories.push({
+          type: (item.querySelector('.st-type') || {}).value || 'Testimonial',
+          icon: (item.querySelector('.st-icon') || {}).value || 'bi-quote',
+          title: title.value.trim(),
+          text: (item.querySelector('.st-text') || {}).value || '',
+          author: (item.querySelector('.st-author') || {}).value || '',
+          role: (item.querySelector('.st-role') || {}).value || ''
+        });
+      }
+    });
+
+    // Services
+    const svcItems = document.querySelectorAll('#adminServiceList .admin-service-item');
+    const services = [];
+    svcItems.forEach(item => {
+      const title = item.querySelector('.svc-title');
+      if (title && title.value.trim()) {
+        services.push({
+          icon: (item.querySelector('.svc-icon') || {}).value || 'bi-gear',
+          title: title.value.trim(),
+          desc: (item.querySelector('.svc-desc') || {}).value || '',
+          tag: (item.querySelector('.svc-tag') || {}).value || ''
+        });
+      }
+    });
+
+    // Gallery
+    const galItems = document.querySelectorAll('#adminGalleryList .admin-gallery-item');
+    const gallery = [];
+    galItems.forEach(item => {
+      const img = item.querySelector('.gal-image');
+      if (img && img.value.trim()) {
+        gallery.push({
+          image: img.value.trim(),
+          label: (item.querySelector('.gal-label') || {}).value || ''
+        });
+      }
+    });
+
+    return {
       orgName: document.getElementById('admin-orgName').value.trim(),
+      heroBadge: document.getElementById('admin-heroBadge').value.trim(),
       heroTitle: document.getElementById('admin-heroTitle').value.trim(),
       heroDesc: document.getElementById('admin-heroDesc').value.trim(),
+      heroStat1Num: document.getElementById('admin-heroStat1Num').value.trim(),
+      heroStat1Label: document.getElementById('admin-heroStat1Label').value.trim(),
+      heroStat2Num: document.getElementById('admin-heroStat2Num').value.trim(),
+      heroStat2Label: document.getElementById('admin-heroStat2Label').value.trim(),
+      heroStat3Num: document.getElementById('admin-heroStat3Num').value.trim(),
+      heroStat3Label: document.getElementById('admin-heroStat3Label').value.trim(),
       founderName: document.getElementById('admin-founderName').value.trim(),
+      founderTitle: document.getElementById('admin-founderTitle').value.trim(),
       founderBio: document.getElementById('admin-founderBio').value.trim(),
+      announcementEnabled: document.getElementById('admin-announcementEnabled').checked,
+      announcementIcon: document.getElementById('admin-announcementIcon').value,
+      announcementText: document.getElementById('admin-announcementText').value.trim(),
+      announcementLink: document.getElementById('admin-announcementLink').value.trim(),
+      announcementHref: document.getElementById('admin-announcementHref').value.trim(),
+      aboutTitle: document.getElementById('admin-aboutTitle').value.trim(),
+      aboutP1: document.getElementById('admin-aboutP1').value.trim(),
+      aboutP2: document.getElementById('admin-aboutP2').value.trim(),
+      aboutQuote: document.getElementById('admin-aboutQuote').value.trim(),
+      aboutQuoteAuthor: document.getElementById('admin-aboutQuoteAuthor').value.trim(),
+      videoUrl: document.getElementById('admin-videoUrl').value.trim(),
+      videoTitle: document.getElementById('admin-videoTitle').value.trim(),
+      videoDesc: document.getElementById('admin-videoDesc').value.trim(),
       cashapp: document.getElementById('admin-cashapp').value.trim(),
       paypal: document.getElementById('admin-paypal').value.trim(),
       venmo: document.getElementById('admin-venmo').value.trim(),
@@ -3440,9 +4709,13 @@ body {
       location: document.getElementById('admin-location').value.trim(),
       facebook: document.getElementById('admin-facebook').value.trim(),
       instagram: document.getElementById('admin-instagram').value.trim(),
+      twitter: document.getElementById('admin-twitter').value.trim(),
+      formEmail: document.getElementById('admin-formEmail').value.trim(),
       boardMembers: members,
       events: events,
-
+      stories: stories,
+      services: services,
+      gallery: gallery,
       stat1Num: document.getElementById('admin-stat1-num').value.trim(),
       stat1Desc: document.getElementById('admin-stat1-desc').value.trim(),
       stat2Num: document.getElementById('admin-stat2-num').value.trim(),
@@ -3453,12 +4726,115 @@ body {
       stat4Desc: document.getElementById('admin-stat4-desc').value.trim(),
       successNum: document.getElementById('admin-success-num').value.trim(),
       successDesc: document.getElementById('admin-success-desc').value.trim(),
-      dataSource: document.getElementById('admin-data-source').value.trim()
+      dataSource: document.getElementById('admin-data-source').value.trim(),
+      colorPrimary: document.getElementById('admin-colorPrimary').value,
+      colorAccent: document.getElementById('admin-colorAccent').value,
+      colorSecondary: document.getElementById('admin-colorSecondary').value,
+      colorBg: document.getElementById('admin-colorBg').value
     };
+  }
+
+  // ===== AUTO-SAVE & LIVE PREVIEW =====
+  let autoSaveTimer = null;
+  const autosaveStatus = document.getElementById('autosaveStatus');
+
+  function setupAutoSave() {
+    const content = document.getElementById('adminContent');
+    if (!content) return;
+    content.addEventListener('input', () => {
+      const auto = getAutoSettings();
+      // Live preview
+      if (auto.livePreview !== false) {
+        const data = collectAdminData();
+        applySiteData.call(null); // re-apply with current form data temporarily
+        // Temporarily save and apply for preview
+        const previewData = collectAdminData();
+        saveData(previewData);
+        applySiteData();
+      }
+      // Auto-save indicator
+      if (autosaveStatus) {
+        autosaveStatus.innerHTML = '<i class="bi bi-cloud-arrow-up"></i> Saving...';
+        autosaveStatus.classList.remove('saved');
+      }
+      // Debounced auto-save
+      if (auto.autoSave !== false) {
+        clearTimeout(autoSaveTimer);
+        autoSaveTimer = setTimeout(() => {
+          const data = collectAdminData();
+          saveData(data);
+          applySiteData();
+          if (autosaveStatus) {
+            autosaveStatus.innerHTML = '<i class="bi bi-cloud-check"></i> Auto-saved';
+            autosaveStatus.classList.add('saved');
+          }
+        }, 3000);
+      }
+    });
+
+    // Also listen to color inputs (they fire 'input' on change)
+    content.addEventListener('change', () => {
+      const auto = getAutoSettings();
+      if (auto.livePreview !== false) {
+        const data = collectAdminData();
+        saveData(data);
+        applySiteData();
+      }
+    });
+  }
+
+  // ===== SAVE =====
+  const saveBtn = document.getElementById('saveAdmin');
+  if (saveBtn) saveBtn.addEventListener('click', () => {
+    const auto = getAutoSettings();
+
+    // Auto-backup before save
+    if (auto.autoBackup !== false) {
+      const currentData = getStoredData();
+      if (Object.keys(currentData).length > 0) {
+        localStorage.setItem(BACKUP_KEY, JSON.stringify(currentData));
+      }
+    }
+
+    // Save automation settings
+    saveAutoSettings({
+      autoHidePastEvents: document.getElementById('admin-autoHidePastEvents').checked,
+      autoFlagPastEvents: document.getElementById('admin-autoFlagPastEvents').checked,
+      autoSave: document.getElementById('admin-autoSave').checked,
+      livePreview: document.getElementById('admin-livePreview').checked,
+      autoBackup: document.getElementById('admin-autoBackup').checked,
+      autoYear: document.getElementById('admin-autoYear').checked
+    });
+
+    const data = collectAdminData();
     saveData(data);
     applySiteData();
     adminOverlay.classList.remove('active');
-    alert('Changes saved successfully!');
+
+    // Show undo bar
+    const undoBar = document.getElementById('adminUndoBar');
+    if (undoBar && auto.autoBackup !== false) {
+      undoBar.classList.add('visible');
+      setTimeout(() => undoBar.classList.remove('visible'), 15000);
+    }
+
+    if (autosaveStatus) {
+      autosaveStatus.innerHTML = '<i class="bi bi-cloud-check"></i> All changes saved';
+      autosaveStatus.classList.add('saved');
+    }
+  });
+
+  // ===== UNDO =====
+  const undoBtn = document.getElementById('adminUndoBtn');
+  if (undoBtn) undoBtn.addEventListener('click', () => {
+    try {
+      const backup = JSON.parse(localStorage.getItem(BACKUP_KEY));
+      if (backup) {
+        saveData(backup);
+        applySiteData();
+        document.getElementById('adminUndoBar').classList.remove('visible');
+      }
+    } catch(e) {}
   });
 
   // Cancel
@@ -3471,17 +4847,34 @@ body {
     const newPw = document.getElementById('admin-newPassword').value;
     if (newPw && newPw.length >= 6) {
       localStorage.setItem(PASS_KEY, newPw);
-      alert('Password updated successfully!');
       document.getElementById('admin-newPassword').value = '';
+      alert('Password updated successfully!');
     } else {
       alert('Password must be at least 6 characters.');
     }
+  });
+
+  // Reset colors
+  const resetColorsBtn = document.getElementById('resetColors');
+  if (resetColorsBtn) resetColorsBtn.addEventListener('click', () => {
+    document.getElementById('admin-colorPrimary').value = DEFAULTS.colorPrimary;
+    document.getElementById('admin-colorAccent').value = DEFAULTS.colorAccent;
+    document.getElementById('admin-colorSecondary').value = DEFAULTS.colorSecondary;
+    document.getElementById('admin-colorBg').value = DEFAULTS.colorBg;
+    // Apply immediately
+    document.documentElement.style.setProperty('--wine', DEFAULTS.colorPrimary);
+    document.documentElement.style.setProperty('--wine-deep', darkenColor(DEFAULTS.colorPrimary, 30));
+    document.documentElement.style.setProperty('--gold', DEFAULTS.colorAccent);
+    document.documentElement.style.setProperty('--green', DEFAULTS.colorSecondary);
+    document.documentElement.style.setProperty('--sage', DEFAULTS.colorSecondary);
+    document.documentElement.style.setProperty('--soft-white', DEFAULTS.colorBg);
   });
 
   // Export
   const exportBtn = document.getElementById('exportSettings');
   if (exportBtn) exportBtn.addEventListener('click', () => {
     const data = getStoredData();
+    data._automation = getAutoSettings();
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -3500,6 +4893,10 @@ body {
     reader.onload = (ev) => {
       try {
         const data = JSON.parse(ev.target.result);
+        if (data._automation) {
+          saveAutoSettings(data._automation);
+          delete data._automation;
+        }
         saveData(data);
         applySiteData();
         loadAdminData();
@@ -3514,9 +4911,11 @@ body {
   // Reset
   const resetBtn = document.getElementById('resetSettings');
   if (resetBtn) resetBtn.addEventListener('click', () => {
-    if (confirm('Are you sure you want to reset all settings? This cannot be undone.')) {
+    if (confirm('Are you sure you want to reset ALL settings? This will restore the website to its original defaults and cannot be undone.')) {
       localStorage.removeItem(STORAGE_KEY);
       localStorage.removeItem(PASS_KEY);
+      localStorage.removeItem(BACKUP_KEY);
+      localStorage.removeItem(AUTO_KEY);
       location.reload();
     }
   });
