@@ -3949,6 +3949,43 @@ body {
 
   function val(data, key) { return data[key] !== undefined && data[key] !== '' ? data[key] : DEFAULTS[key]; }
 
+  // ===== ONE-TIME DATA MIGRATION =====
+  // A previously saved copy of the site data in localStorage fully overrides the
+  // defaults below. When the default events list was replaced (Sept 2026), any
+  // browser that had saved the old list kept showing it - with no flyer images.
+  // This refreshes those stale copies without touching genuinely custom events.
+  function migrateStoredData() {
+    var data;
+    try { data = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) { return; }
+    if (!data || !Array.isArray(data.events)) return;
+    var changed = false;
+
+    // Case 1: the saved events are still the superseded default set -> replace.
+    var supersededTitles = [
+      'Annual Homecoming Celebration',
+      'Know Your Rights Workshop',
+      'Fundraiser Gala Dinner'
+    ];
+    var savedTitles = data.events.map(function (e) { return e && e.title; });
+    var isSuperseded = supersededTitles.every(function (t) { return savedTitles.indexOf(t) !== -1; });
+    if (isSuperseded) {
+      data.events = JSON.parse(JSON.stringify(DEFAULTS.events));
+      changed = true;
+    }
+
+    // Case 2: an event still points at the renamed/removed Mr. Houston flyer.
+    data.events.forEach(function (e) {
+      if (e && e.image === 'images/flyer-intimate-evening-mr-houston.jpg') {
+        e.image = 'images/houston.jpeg';
+        changed = true;
+      }
+    });
+
+    if (changed) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+    }
+  }
+
   // ===== PARSE EVENT DATE HELPER =====
   function parseEventDate(ev) {
     try {
@@ -4920,6 +4957,7 @@ body {
   });
 
   // Apply saved data on page load
+  migrateStoredData();
   applySiteData();
 })();
 </script>
