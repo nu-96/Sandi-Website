@@ -2135,6 +2135,23 @@ body {
 .admin-btn-secondary:hover { background: var(--cream-dark); }
 .admin-btn-danger { background: #dc3545; color: white; }
 .admin-btn-danger:hover { background: #c82333; }
+.admin-btn:disabled { opacity: 0.55; cursor: default; }
+
+.admin-upload-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -4px 0 4px;
+}
+.admin-upload-btn { padding: 7px 16px; font-size: 0.78rem; }
+.admin-upload-status { font-size: 0.78rem; color: var(--warm-gray); }
+.admin-upload-status.ok { color: #1a7f37; }
+.admin-upload-status.err { color: #dc3545; }
+.admin-upload-thumb {
+  height: 46px; width: auto; border-radius: 6px;
+  border: 1px solid var(--cream-dark); display: block;
+}
 
 .admin-actions {
   display: flex;
@@ -3197,6 +3214,7 @@ body {
         <button class="admin-tab" data-tab="statistics">Statistics</button>
         <button class="admin-tab" data-tab="appearance">Appearance</button>
         <button class="admin-tab" data-tab="automation">Automation</button>
+        <button class="admin-tab" data-tab="publishing">Publishing</button>
         <button class="admin-tab" data-tab="settings">Settings</button>
       </div>
 
@@ -3643,6 +3661,50 @@ body {
         </div>
       </div>
 
+      <!-- ==================== PUBLISHING TAB ==================== -->
+      <div class="admin-section" id="tab-publishing">
+        <div class="admin-info-box">
+          <i class="bi bi-info-circle"></i>
+          <span>Connect a GitHub token so this panel can upload images and publish content straight to the live site. Without this, edits stay only in this browser.</span>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-github"></i> GitHub Connection</h4>
+        <div class="admin-grid-2">
+          <div class="admin-field">
+            <label>Repository</label>
+            <input type="text" id="admin-ghRepo" placeholder="nu-96/Sandi-Website">
+            <div class="admin-help">Format: owner/repo</div>
+          </div>
+          <div class="admin-field">
+            <label>Branch</label>
+            <input type="text" id="admin-ghBranch" placeholder="main">
+          </div>
+        </div>
+        <div class="admin-field">
+          <label>Access Token</label>
+          <input type="password" id="admin-ghToken" placeholder="github_pat_..." autocomplete="off">
+          <div class="admin-help">
+            Create a <strong>fine-grained</strong> token at github.com/settings/tokens limited to this one
+            repository with <strong>Contents: Read and write</strong>. It is stored only in this browser and
+            is never included in exported settings. Revoke it anytime on GitHub.
+          </div>
+        </div>
+        <div class="admin-actions">
+          <button class="admin-btn admin-btn-secondary" id="ghTestBtn"><i class="bi bi-plug"></i> Test Connection</button>
+          <span class="admin-upload-status" id="ghTestStatus"></span>
+        </div>
+
+        <h4 class="admin-section-header"><i class="bi bi-rocket-takeoff"></i> Publish</h4>
+        <p style="font-size:0.85rem;color:var(--warm-gray);margin-bottom:12px;">
+          Pushes all current content (events, gallery, text, images) to <code>content.json</code> in the repo.
+          The live site picks it up for every visitor once GitHub Pages finishes building (about a minute).
+        </p>
+        <div class="admin-actions">
+          <button class="admin-btn admin-btn-primary" id="ghPublishBtn"><i class="bi bi-cloud-arrow-up"></i> Publish to Site</button>
+          <span class="admin-upload-status" id="ghPublishStatus"></span>
+        </div>
+      </div>
+
       <!-- ==================== SETTINGS TAB ==================== -->
       <div class="admin-section" id="tab-settings">
         <h4 class="admin-section-header"><i class="bi bi-lock-fill"></i> Security</h4>
@@ -3849,6 +3911,9 @@ body {
   const PASS_KEY = 'ifts_admin_pass';
   const BACKUP_KEY = 'ifts_site_backup';
   const AUTO_KEY = 'ifts_automation';
+  const GH_KEY = 'ifts_github';
+  const CONTENT_URL = 'content.json';
+  const DEFAULT_REPO = 'nu-96/Sandi-Website';
   const DEFAULT_PASS = 'admin123';
 
   function getStoredData() {
@@ -3865,6 +3930,110 @@ body {
   }
   function saveAutoSettings(s) {
     localStorage.setItem(AUTO_KEY, JSON.stringify(s));
+  }
+
+  // ===== GITHUB PUBLISHING =====
+  function getGitHubCfg() {
+    var c;
+    try { c = JSON.parse(localStorage.getItem(GH_KEY)) || {}; } catch (e) { c = {}; }
+    return {
+      repo: (c.repo || '').trim() || DEFAULT_REPO,
+      branch: (c.branch || '').trim() || 'main',
+      token: c.token || ''
+    };
+  }
+  function saveGitHubCfg(c) {
+    localStorage.setItem(GH_KEY, JSON.stringify({
+      repo: (c.repo || '').trim(),
+      branch: (c.branch || '').trim(),
+      token: c.token || ''
+    }));
+  }
+  function ghConfigured() {
+    var c = getGitHubCfg();
+    return !!(c.token && /^[^/]+\/[^/]+$/.test(c.repo));
+  }
+  function ghHeaders(extra) {
+    var c = getGitHubCfg();
+    var h = {
+      'Authorization': 'Bearer ' + c.token,
+      'Accept': 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28'
+    };
+    if (extra) { for (var k in extra) h[k] = extra[k]; }
+    return h;
+  }
+  function ghApi(path, opts) {
+    return fetch('https://api.github.com/' + path, opts);
+  }
+  // Base64-encode a UTF-8 string (for the GitHub contents API).
+  function utf8ToBase64(str) {
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+  // Returns the blob sha of a file, or null if it does not exist.
+  function ghGetSha(filePath) {
+    var c = getGitHubCfg();
+    return ghApi('repos/' + c.repo + '/contents/' + filePath + '?ref=' + encodeURIComponent(c.branch), {
+      headers: ghHeaders()
+    }).then(function (res) {
+      if (res.status === 404) return null;
+      if (!res.ok) return res.json().catch(function () { return {}; }).then(function (j) {
+        throw new Error(j.message || ('GitHub error ' + res.status));
+      });
+      return res.json().then(function (j) { return j.sha || null; });
+    });
+  }
+  // Create or update a file. contentB64 must be base64 with no data: prefix.
+  function ghPutFile(filePath, contentB64, message) {
+    var c = getGitHubCfg();
+    return ghGetSha(filePath).catch(function () { return null; }).then(function (sha) {
+      var body = { message: message, content: contentB64, branch: c.branch };
+      if (sha) body.sha = sha;
+      return ghApi('repos/' + c.repo + '/contents/' + filePath, {
+        method: 'PUT',
+        headers: ghHeaders({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify(body)
+      });
+    }).then(function (res) {
+      if (!res.ok) return res.json().catch(function () { return {}; }).then(function (j) {
+        throw new Error(j.message || ('GitHub error ' + res.status));
+      });
+      return res.json();
+    });
+  }
+
+  // Resize/compress an image File. Resolves { base64, ext }.
+  function processImageFile(file, maxDim, quality) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        URL.revokeObjectURL(url);
+        var scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+        var w = Math.max(1, Math.round(img.width * scale));
+        var h = Math.max(1, Math.round(img.height * scale));
+        var canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        var isPng = /png$/i.test(file.type);
+        canvas.toBlob(function (blob) {
+          if (!blob) { reject(new Error('could not process image')); return; }
+          var fr = new FileReader();
+          fr.onload = function () { resolve({ base64: String(fr.result).split(',')[1], ext: isPng ? 'png' : 'jpg' }); };
+          fr.onerror = function () { reject(new Error('could not read image')); };
+          fr.readAsDataURL(blob);
+        }, isPng ? 'image/png' : 'image/jpeg', quality);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('not a valid image file')); };
+      img.src = url;
+    });
+  }
+  function slugify(s) {
+    return (String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40)) || 'image';
+  }
+  function fileStamp() {
+    var d = new Date(), p = function (n) { return String(n).padStart(2, '0'); };
+    return '' + d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + '-' + p(d.getHours()) + p(d.getMinutes()) + p(d.getSeconds());
   }
 
   // Show admin button if ?admin=true
@@ -4014,8 +4183,14 @@ body {
   }
 
   // ===== APPLY SITE DATA =====
+  // Precedence per key: this browser's saved edits > published content.json > built-in DEFAULTS.
+  let publishedData = null;
+  function getEffectiveData() {
+    const stored = getStoredData();
+    return publishedData ? Object.assign({}, publishedData, stored) : stored;
+  }
   function applySiteData() {
-    const data = getStoredData();
+    const data = getEffectiveData();
     const auto = getAutoSettings();
 
     // Organization name
@@ -4457,6 +4632,14 @@ body {
     document.getElementById('admin-livePreview').checked = auto.livePreview !== false;
     document.getElementById('admin-autoBackup').checked = auto.autoBackup !== false;
     document.getElementById('admin-autoYear').checked = auto.autoYear !== false;
+
+    // Publishing tab
+    const gh = getGitHubCfg();
+    const ghRawToken = (function () { try { return (JSON.parse(localStorage.getItem(GH_KEY)) || {}); } catch (e) { return {}; } })();
+    document.getElementById('admin-ghRepo').value = ghRawToken.repo || '';
+    document.getElementById('admin-ghBranch').value = ghRawToken.branch || '';
+    document.getElementById('admin-ghToken').value = gh.token || '';
+    document.getElementById('admin-ghRepo').placeholder = DEFAULT_REPO;
   }
 
   // ===== BOARD ADMIN =====
@@ -4490,6 +4673,72 @@ body {
     div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
     div.querySelector('.board-name').focus();
   });
+
+  // Adds an "Upload image" control that commits the chosen file to the repo
+  // (images/uploads/) and writes the resulting path into targetInput.
+  function attachUploader(card, targetInput, nameHint) {
+    const row = document.createElement('div');
+    row.className = 'admin-upload-row';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'admin-btn admin-btn-secondary admin-upload-btn';
+    btn.innerHTML = '<i class="bi bi-cloud-arrow-up"></i> Upload image';
+    const picker = document.createElement('input');
+    picker.type = 'file';
+    picker.accept = 'image/*';
+    picker.style.display = 'none';
+    const status = document.createElement('span');
+    status.className = 'admin-upload-status';
+
+    btn.addEventListener('click', () => {
+      if (!ghConfigured()) {
+        status.className = 'admin-upload-status err';
+        status.textContent = 'Connect GitHub first — see the Publishing tab.';
+        return;
+      }
+      picker.click();
+    });
+
+    picker.addEventListener('change', () => {
+      const file = picker.files[0];
+      picker.value = '';
+      if (!file) return;
+      if (!/^image\//.test(file.type)) {
+        status.className = 'admin-upload-status err';
+        status.textContent = 'That is not an image file.';
+        return;
+      }
+      if (file.size > 15 * 1024 * 1024) {
+        status.className = 'admin-upload-status err';
+        status.textContent = 'Image is over 15 MB — please pick a smaller one.';
+        return;
+      }
+      btn.disabled = true;
+      status.className = 'admin-upload-status';
+      status.textContent = 'Optimizing…';
+      processImageFile(file, 1600, 0.85).then((img) => {
+        status.textContent = 'Uploading to GitHub…';
+        const path = 'images/uploads/' + slugify(typeof nameHint === 'function' ? nameHint() : nameHint) + '-' + fileStamp() + '.' + img.ext;
+        return ghPutFile(path, img.base64, 'Upload image ' + path).then(() => path);
+      }).then((path) => {
+        targetInput.value = path;
+        targetInput.dispatchEvent(new Event('input', { bubbles: true }));
+        targetInput.dispatchEvent(new Event('change', { bubbles: true }));
+        status.className = 'admin-upload-status ok';
+        status.innerHTML = '<i class="bi bi-check-circle"></i> Uploaded. Hit “Publish to Site” to make it live.';
+      }).catch((err) => {
+        status.className = 'admin-upload-status err';
+        status.textContent = 'Upload failed: ' + err.message;
+      }).then(() => { btn.disabled = false; });
+    });
+
+    row.appendChild(btn);
+    row.appendChild(picker);
+    row.appendChild(status);
+    // place the control directly under the image field
+    const field = targetInput.closest('.admin-field') || card;
+    field.appendChild(row);
+  }
 
   // ===== EVENTS ADMIN =====
   function renderEventsAdmin(events) {
@@ -4525,6 +4774,7 @@ body {
       '<div class="admin-field"><label><i class="bi bi-image"></i> Photo URL (optional)</label><input type="text" class="ev-image" value="' + escapeHtml(ev.image || '') + '" placeholder="images/photo.jpg or https://..."></div>';
     list.appendChild(div);
     div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+    attachUploader(div, div.querySelector('.ev-image'), () => (div.querySelector('.ev-title').value || 'event'));
   }
 
   const addEventBtn = document.getElementById('addEvent');
@@ -4637,6 +4887,7 @@ body {
       '</div>';
     list.appendChild(div);
     div.querySelector('.admin-remove').addEventListener('click', () => div.remove());
+    attachUploader(div, div.querySelector('.gal-image'), () => (div.querySelector('.gal-label').value || 'gallery'));
   }
 
   const addGalleryBtn = document.getElementById('addGalleryItem');
@@ -4916,6 +5167,89 @@ body {
     document.documentElement.style.setProperty('--soft-white', DEFAULTS.colorBg);
   });
 
+  // ===== PUBLISHING TAB =====
+  function readGhForm() {
+    return {
+      repo: document.getElementById('admin-ghRepo').value,
+      branch: document.getElementById('admin-ghBranch').value,
+      token: document.getElementById('admin-ghToken').value
+    };
+  }
+  ['admin-ghRepo', 'admin-ghBranch', 'admin-ghToken'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', () => saveGitHubCfg(readGhForm()));
+  });
+
+  const ghTestBtn = document.getElementById('ghTestBtn');
+  if (ghTestBtn) ghTestBtn.addEventListener('click', () => {
+    saveGitHubCfg(readGhForm());
+    const status = document.getElementById('ghTestStatus');
+    if (!ghConfigured()) {
+      status.className = 'admin-upload-status err';
+      status.textContent = 'Enter a repository (owner/repo) and a token first.';
+      return;
+    }
+    const cfg = getGitHubCfg();
+    status.className = 'admin-upload-status';
+    status.textContent = 'Checking…';
+    ghTestBtn.disabled = true;
+    // Hits the exact endpoint/permission/branch that publishing needs.
+    ghApi('repos/' + cfg.repo + '/contents/?ref=' + encodeURIComponent(cfg.branch), { headers: ghHeaders() })
+      .then((res) => res.json().then((j) => ({ res, j })))
+      .then(({ res, j }) => {
+        if (res.ok) {
+          status.className = 'admin-upload-status ok';
+          status.innerHTML = '<i class="bi bi-check-circle"></i> Connected to ' + escapeHtml(cfg.repo) + ' (' + escapeHtml(cfg.branch) + ').';
+        } else if (res.status === 401) {
+          status.className = 'admin-upload-status err';
+          status.textContent = 'Token rejected (401). Check the token value and that it has not expired.';
+        } else if (res.status === 403) {
+          status.className = 'admin-upload-status err';
+          status.textContent = 'Access denied (403). The token needs Contents: Read and write on this repo.';
+        } else if (res.status === 404) {
+          status.className = 'admin-upload-status err';
+          status.textContent = 'Not found (404). Check the repository name and branch.';
+        } else {
+          status.className = 'admin-upload-status err';
+          status.textContent = 'GitHub error ' + res.status + ': ' + (j && j.message ? j.message : 'unknown');
+        }
+      })
+      .catch((err) => {
+        status.className = 'admin-upload-status err';
+        status.textContent = 'Network error: ' + err.message;
+      })
+      .then(() => { ghTestBtn.disabled = false; });
+  });
+
+  const ghPublishBtn = document.getElementById('ghPublishBtn');
+  if (ghPublishBtn) ghPublishBtn.addEventListener('click', () => {
+    saveGitHubCfg(readGhForm());
+    const status = document.getElementById('ghPublishStatus');
+    if (!ghConfigured()) {
+      status.className = 'admin-upload-status err';
+      status.textContent = 'Connect GitHub first (repository + token above).';
+      return;
+    }
+    const payload = collectAdminData();
+    status.className = 'admin-upload-status';
+    status.textContent = 'Publishing…';
+    ghPublishBtn.disabled = true;
+    ghPutFile(CONTENT_URL, utf8ToBase64(JSON.stringify(payload, null, 2)), 'Publish site content via admin panel')
+      .then(() => {
+        // keep this browser in sync with what was just published
+        saveData(payload);
+        publishedData = payload;
+        applySiteData();
+        status.className = 'admin-upload-status ok';
+        status.innerHTML = '<i class="bi bi-check-circle"></i> Published. Live for everyone once the GitHub Pages build finishes (~1 min).';
+      })
+      .catch((err) => {
+        status.className = 'admin-upload-status err';
+        status.textContent = 'Publish failed: ' + err.message;
+      })
+      .then(() => { ghPublishBtn.disabled = false; });
+  });
+
   // Export
   const exportBtn = document.getElementById('exportSettings');
   if (exportBtn) exportBtn.addEventListener('click', () => {
@@ -4969,6 +5303,17 @@ body {
   // Apply saved data on page load
   migrateStoredData();
   applySiteData();
+
+  // Then pull published content from the repo and re-render if present.
+  fetch(CONTENT_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) {
+      if (j && typeof j === 'object' && !Array.isArray(j)) {
+        publishedData = j;
+        applySiteData();
+      }
+    })
+    .catch(function () { /* offline or content.json not published yet */ });
 })();
 </script>
 
